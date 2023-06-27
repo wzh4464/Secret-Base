@@ -4,21 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "cbac0f798ffaac20",
+        "id": "0364fba5281a1217",
         "type": "tabs",
         "children": [
           {
-            "id": "fbe17ee00a457ccc",
+            "id": "f9d658cf66d13d30",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "excalidraw",
               "state": {
-                "file": "testcanvas.canvas",
-                "viewState": {
-                  "x": 230,
-                  "y": 243.5,
-                  "zoom": -1.4632736849316914
-                }
+                "file": "Excalidraw/Drawing 2023-06-27 20.59.14.excalidraw.md"
               }
             }
           }
@@ -96,7 +91,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "testcanvas.canvas",
+            "file": "Excalidraw/Drawing 2023-06-27 20.59.14.excalidraw.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -113,7 +108,7 @@
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "testcanvas.canvas",
+            "file": "Excalidraw/Drawing 2023-06-27 20.59.14.excalidraw.md",
             "linksCollapsed": false,
             "unlinkedCollapsed": true
           }
@@ -125,7 +120,7 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "testcanvas.canvas"
+            "file": "Excalidraw/Drawing 2023-06-27 20.59.14.excalidraw.md"
           }
         }
       },
@@ -151,30 +146,35 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "fbe17ee00a457ccc",
+  "active": "f9d658cf66d13d30",
   "lastOpenFiles": [
-    "2023-06-17.md",
-    "testcanvas.canvas",
-    "陆军学说.md",
+    "Excalidraw/Drawing 2023-06-27 20.59.14.excalidraw.md",
+    "2023-06-27.md",
+    "Excalidraw",
+    "formIR-1_E (1).rtf",
     "Drawing 2023-04-17 20.53.13.excalidraw.md",
-    "钢铁雄心公式.md",
-    "ref.bib",
-    "obsidian/2023-04-17-1681734266/assets/1681734266-a753df81461725ce47c3b3373271afdd.jpg",
-    "obsidian/2023-04-17-1681734266/assets/1681734266-7e3e22b626a7b1a49c5eac5f5e081d32.png",
-    "obsidian/2023-04-17-1681734266/assets/1681734266-c370f213f7dce719c11b42faee9464e6.png",
+    "Deltagrad.md",
     "美国终身教授的海归全记录/assets/1681731920-a64f921a2eac9dd0555a043df97a6f16.jpg",
     "美国终身教授的海归全记录/assets/1681731920-f7966fb795f3ee74ceec613c90761176.jpg",
+    "美国终身教授的海归全记录/assets/1681731920-20e32a2547556fe304079023a8bbc0c5.jpg",
     "美国终身教授的海归全记录/assets/1681731920-796435e8051c26ef7901ae6156efbd3d.jpg",
-    "美国终身教授的海归全记录/assets/1681731920-4f76c7badd96302ab96220810a369c93.jpg",
-    "美国终身教授的海归全记录/assets/1681731920-bd9b82c315ef5ed24f3b5e31e90bf1f0.jpg",
-    "美国终身教授的海归全记录/assets/1681731920-8d1153d77912162ad3797d699b68b478.jpg",
-    "美国终身教授的海归全记录/assets/1681731920-38e29b068b49773c31d0c7a6e6e007e9.jpg",
+    "美国终身教授的海归全记录/assets/1681731920-121de9e2f4747d24af099d94ac3fab19.jpg",
+    "美国终身教授的海归全记录/assets/1681731920-24fc619a0b0ab52a0f230a2c0c33f6ae.jpg",
+    "美国终身教授的海归全记录/assets/1681731920-dafee93e420b0d9f016c2454d149b452.jpg",
+    "美国终身教授的海归全记录/assets/1681731920-2826898631a99f153a5f7e874bee886c.jpg",
+    "美国终身教授的海归全记录/assets/1681731920-195a8b1d2e68f46a2dcd94df5cfad875.jpg",
+    "obsidian/2023-04-17-1681734266/assets/1681734266-a753df81461725ce47c3b3373271afdd.jpg",
+    "testcanvas.canvas",
+    "一周计划0626.md",
+    "2023-06-17.md",
+    "陆军学说.md",
+    "钢铁雄心公式.md",
+    "ref.bib",
     "2023-05-02.md",
     "2023-04-18.md",
     "美国终身教授的海归全记录/美国终身教授的海归全记录.md",
     "2023-05-18.md",
     "飞机设计.md",
-    "formIR-1_E (1).rtf",
     "2023-05-29.md",
     "formIR-1_E (1) 1.rtf",
     "2023-04-27.md",
