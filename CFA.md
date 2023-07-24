@@ -34,3 +34,20 @@ governmental short-term debt (T-bills) is often used as a proxy for the nominal 
 美国T票的流动性溢价为零
 - Maturity risk premium: The maturity premium compensates investors for the increased sensitivity of the market value of debt to a change in market interest rates as maturity is extended, in general (holding all else equal). The difference between the interest rate on longer-maturity, liquid Treasury debt and that on short-term Treasury debt reflects a positive maturity premium for the longer-term debt (and possibly different inflation premiums as well).
 到期风险溢价：到期风险溢价补偿投资者对债务市场价值对市场利率变化的敏感性，因为到期日延长，一般来说（其他条件不变）。较长期限的流动性美国国债利率与短期美国国债利率之间的差异反映了较长期债务的正到期溢价（以及可能的不同通货膨胀溢价）。
+
+### FUTURE VALUE OF A SINGLE CASH FLOW
+
+- Future value (FV) 
+- Present value (PV)
+- Number of periods (n)
+
+lump sum (一次性支付): 仍然是 $FV = PV(1+r)^n$
+Pension fund: 养老金
+
+$$
+FV = PV(1+r)^n
+$$
+
+### NON-ANNUAL COMPOUNDING (FUTURE VALUE)
+
+LO: calculate the solution for time value of money problems with different frequencies of compounding
