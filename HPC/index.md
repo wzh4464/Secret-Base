@@ -35,7 +35,7 @@
 *   PuTTY can be downloaded from [https://www.putty.org/](https://www.putty.org/)  
     PuTTY 可以从 https://www.putty.org/ 下载
 
-![](assets/1691122292-9f48917200673547e9e985c07557671f.jpg)
+![](1691122292-9f48917200673547e9e985c07557671f.jpg)
 
 ## Job Submission 工作提交
 
@@ -46,10 +46,10 @@
     1.  Job Partitions  作业分区
         *   7 CPU/GPU partitions are currently available for all users  
             目前7个CPU/GPU分区可供所有用户使用  
-            ![](assets/1691122292-490aa854a327e6e416b23603d195a17d.jpg)
+            ![](1691122292-490aa854a327e6e416b23603d195a17d.jpg)
     2.  Special Partitions  特殊分区
         *   Please contact the HPC administrator if you need to use below partitions, or you have special needs.  
-            如果您需要使用以下分区，或者有特殊需求，请联系HPC管理员。![](assets/1691122292-e1f88732aadb6830326a20025beaa5c9.jpg)
+            如果您需要使用以下分区，或者有特殊需求，请联系HPC管理员。![](1691122292-e1f88732aadb6830326a20025beaa5c9.jpg)
     3.  Job Priority 工作优先级  
         
     
@@ -78,13 +78,13 @@
               
             **Useful SLURM Commands: 有用的 SLURM 命令：**  
               
-            ![](assets/1691122292-e18b35d37c1979a436e959875954f2bc.png)  
+            ![](1691122292-e18b35d37c1979a436e959875954f2bc.png)  
               
             
-            |     |     |     |     |     |     |     |
-            | --- | --- | --- | --- | --- | --- | --- |
-            | **squeue 排队** |     | to check status of your jobs  <br>检查您的工作状态 |     |
-            | ![](assets/1691122292-49f0ae851757d67f8292aa0de876ac3d.png) |     |     |     |
+            |     |     |     |
+            | --- | --- | --- | 
+            | **squeue 排队** |     | to check status of your jobs  <br>检查您的工作状态 |
+            | ![](1691122292-49f0ae851757d67f8292aa0de876ac3d.png) |     |     | 
             | _Job State Codes: 作业状态代码：  <br>__(_[_https://slurm.schedmd.com/squeue.html#lbAG_](https://slurm.schedmd.com/squeue.html#lbAG)_)_  <br>(https://slurm.schedmd.com/squeue.html#lbAG) |     |     |     |
             | RUNNING 跑步 | **R** |     | The job currently is allocated to a node and is running.  <br>该作业当前已分配到一个节点并正在运行。 |
             | PENDING 待办的 | **PD** |     | The job is waiting for resource allocation. It will eventually run.  <br>该作业正在等待资源分配。它最终会运行。 |
@@ -95,10 +95,10 @@
             | SUSPENDED 暂停 | **S** |     | A running job has been stopped with its cores released to other jobs.  <br>正在运行的作业已停止，其核心被释放给其他作业。 |
             | STOPPED 停止 | **ST** |     | A running job has been stopped with its cores retained.  <br>正在运行的作业已停止，但保留了其核心。 |
             
-            |     |     |     |     |     |
-            | --- | --- | --- | --- | --- |
-            | _Job Reason Codes: 工作原因代码：  <br>_([_https://slurm.schedmd.com/resource\_limits.html_](https://slurm.schedmd.com/resource_limits.html)_)_  <br>(https://slurm.schedmd.com/resource\_limits.html) |     |     |
-            | Resource 资源 | The job is waiting for resources to become available and will eventually run.  <br>该作业正在等待资源可用并最终运行。 |     |
+            |     |     |
+            | --- | --- | 
+            | _Job Reason Codes: 工作原因代码：  <br>_([_https://slurm.schedmd.com/resource\_limits.html_](https://slurm.schedmd.com/resource_limits.html)_)_  <br>(https://slurm.schedmd.com/resource\_limits.html) | 
+            | Resource 资源 | The job is waiting for resources to become available and will eventually run.  <br>该作业正在等待资源可用并最终运行。 | 
             | Priority 优先事项 | One or more higher priority jobs is in queue for running. Your job will eventually run.  <br>一个或多个优先级较高的作业正在队列中等待运行。你的工作最终会运行。 |     |
             | QOS(_Resource_)Limit QOS(资源)限制 | Maximum resource for your job’s QoS have been met.  <br>已满足作业 QoS 的最大资源。 |     |
             | _MaxJobsPerUser 每个用户的最大作业数_ | The maximum number of jobs a user can have running at a given time.  <br>用户在给定时间可以运行的最大作业数。 |     |
@@ -147,7 +147,7 @@
                 
                   
                 
-                ![](assets/1691122292-40ed3afc19368cd16f83b79c3af38c23.jpg)
+                ![](1691122292-40ed3afc19368cd16f83b79c3af38c23.jpg)
                 
             *   Here is another example of a submission script for a one GPU job.  
                 以下是一个 GPU 作业的提交脚本的另一个示例。  
@@ -177,7 +177,7 @@
                 
                   
                 
-                ![](assets/1691122292-0f6ddbca85fd766e5146365c5bc4b370.jpg)
+                ![](1691122292-0f6ddbca85fd766e5146365c5bc4b370.jpg)
                 
                 **  
                 Interactive Scheduling: 互动调度：**
@@ -197,7 +197,7 @@
                     ```
                     
                       
-                    ![](assets/1691122292-cc325823deae0c80892a4e086bd28ada.jpg)
+                    ![](1691122292-cc325823deae0c80892a4e086bd28ada.jpg)
     4.  Quality of Service (QoS)  
         服务质量 (QoS)
     
@@ -216,7 +216,7 @@
     *   Users can use command **showQos** to check all QoSs on the system  
         用户可以使用命令 showQos 查看系统上的所有 QoS  
           
-        ![](assets/1691122292-0884d7533c2892fba6a3e4aaad07f4e2.png)
+        ![](1691122292-0884d7533c2892fba6a3e4aaad07f4e2.png)
     *   There are 2 types of QoSs:  
         有 2 种类型的 QoS：
         *   Partition-QoS (i.e. gpu1 and gpu2) are used to define the partition properties, and they should not be defined inside the job script by users; they will be observed if a conflated User-QoS is defined within the job script. However, certain special QoS can override the limits defined by Partition-QoS (with OverParQOS Flag)  
@@ -339,14 +339,14 @@ Software Stacks 软件堆栈
     ```
     
       
-    ![](assets/1691122292-8486866cfc269077bb48bc6d524e30f9.png)  
+    ![](1691122292-8486866cfc269077bb48bc6d524e30f9.png)  
     The current modulefile set is minimal, and we are preparing a more comprehensive set which covers more scientific applications and programming tools. Users will be informed when the new environment set is ready.  
     当前的模块文件集很小，我们正在准备一个更全面的集，其中涵盖更多的科学应用程序和编程工具。当新环境集准备就绪时，用户将收到通知。
 2.  **Use of Environment Modules  
     环境模块的使用**
 
 1.  Common module commands 常用模块命令  
-    ![](assets/1691122292-6144a7220c868c033852e25e95f4e653.jpg)
+    ![](1691122292-6144a7220c868c033852e25e95f4e653.jpg)
 2.  Append self-maintained module set  
     追加自维护模块集  
     
@@ -371,10 +371,10 @@ Software Stacks 软件堆栈
     
     |     |     |     |
     | --- | --- | --- |
-    | i) Prepare a definition file under a X86-64 Linux environment.  <br>i) 在X86-64 Linux环境下准备定义文件。<br><br>*   In this example, we will install the packages, such as gcc and python, with apt-get on Ubuntu 18.04 images.  <br>    在此示例中，我们将使用 apt-get 在 Ubuntu 18.04 映像上安装 gcc 和 python 等软件包。<br>*   CUDA 10.0 libraries directly downloaded from Nvidia will be installed.  <br>    将安装直接从 Nvidia 下载的 CUDA 10.0 库。<br>*   Tensorflow (with GPU supported), numpy and OpenCV will be installed with pip within the image subsequently.  <br>    随后，Tensorflow（支持 GPU）、numpy 和 OpenCV 将与 pip 一起安装在映像中。<br><br>![](assets/1691122292-6e26dd7d0953931e1f41c6145656c166.jpg) |
-    | ii) Build image with Singularity command. This example was done on a CentOS Linux VM (Virtual Box) under MacOS  <br>ii) 使用 Singularity 命令构建图像。此示例是在 MacOS 下的 CentOS Linux VM（Virtual Box）上完成的  <br>  <br>![](assets/1691122292-0edfb8f23c13acfb1f34dd776187503d.jpg) |
-    | iii) Upload the Singularity image to HPC Login Node  <br>iii) 将 Singularity 镜像上传到 HPC 登录节点  <br>  <br>![](assets/1691122292-f2cbb19cf66c90f12754f9bec2447fc9.jpg) |
-    | iv) Submit the job and request the resource; in this example, an interactive schedule is used for illustration purpose only, and users should submit batch jobs if possible.  <br>iv) 提交作业并请求资源；在此示例中，交互式计划仅用于说明目的，用户应尽可能提交批处理作业。<br><br>*   Login to system, and submit an interactive job  <br>    登录系统，提交交互式作业  <br>      <br>    ![](assets/1691122292-41c17c50caf5648b13c2a8aee0db0dd4.jpg)<br>*   When the resource is allocated, the prompt will change to indicate which node has been assigned (i.e. hpc-gpu005 in this case).  <br>    分配资源时，提示符将更改以指示已分配哪个节点（即本例中的 hpc-gpu005）。  <br>      <br>    For illustration purpose, we show the distro information of the Base System; it is a CentOS 8  <br>    为了便于说明，我们显示了基本系统的发行版信息；它是 CentOS 8  <br>      <br>    ![](assets/1691122292-097fc6f1ad267d1ad23cbca58ed4af83.jpg)<br>*   Execute Linux commands from the singularity image.  <br>    从奇点映像执行 Linux 命令。  <br>    First, we ask to show the distro information of the client (the image), and it is a Ubuntu 18.04  <br>    首先，我们要求显示客户端（镜像）的发行版信息，它是 Ubuntu 18.04  <br>      <br>    ![](assets/1691122292-75f5f171f9d4085ea8f4db5458aa8879.jpg)<br>*   Then, we call python3 from the image.  <br>    然后，我们从图像中调用 python3。  <br>      <br>    ![](assets/1691122292-fdb787ad1ae674a0909f4c6b1155e120.jpg) |
+    | i) Prepare a definition file under a X86-64 Linux environment.  <br>i) 在X86-64 Linux环境下准备定义文件。<br><br>*   In this example, we will install the packages, such as gcc and python, with apt-get on Ubuntu 18.04 images.  <br>    在此示例中，我们将使用 apt-get 在 Ubuntu 18.04 映像上安装 gcc 和 python 等软件包。<br>*   CUDA 10.0 libraries directly downloaded from Nvidia will be installed.  <br>    将安装直接从 Nvidia 下载的 CUDA 10.0 库。<br>*   Tensorflow (with GPU supported), numpy and OpenCV will be installed with pip within the image subsequently.  <br>    随后，Tensorflow（支持 GPU）、numpy 和 OpenCV 将与 pip 一起安装在映像中。<br><br>![](1691122292-6e26dd7d0953931e1f41c6145656c166.jpg) |
+    | ii) Build image with Singularity command. This example was done on a CentOS Linux VM (Virtual Box) under MacOS  <br>ii) 使用 Singularity 命令构建图像。此示例是在 MacOS 下的 CentOS Linux VM（Virtual Box）上完成的  <br>  <br>![](1691122292-0edfb8f23c13acfb1f34dd776187503d.jpg) |
+    | iii) Upload the Singularity image to HPC Login Node  <br>iii) 将 Singularity 镜像上传到 HPC 登录节点  <br>  <br>![](1691122292-f2cbb19cf66c90f12754f9bec2447fc9.jpg) |
+    | iv) Submit the job and request the resource; in this example, an interactive schedule is used for illustration purpose only, and users should submit batch jobs if possible.  <br>iv) 提交作业并请求资源；在此示例中，交互式计划仅用于说明目的，用户应尽可能提交批处理作业。<br><br>*   Login to system, and submit an interactive job  <br>    登录系统，提交交互式作业  <br>      <br>    ![](1691122292-41c17c50caf5648b13c2a8aee0db0dd4.jpg)<br>*   When the resource is allocated, the prompt will change to indicate which node has been assigned (i.e. hpc-gpu005 in this case).  <br>    分配资源时，提示符将更改以指示已分配哪个节点（即本例中的 hpc-gpu005）。  <br>      <br>    For illustration purpose, we show the distro information of the Base System; it is a CentOS 8  <br>    为了便于说明，我们显示了基本系统的发行版信息；它是 CentOS 8  <br>      <br>    ![](1691122292-097fc6f1ad267d1ad23cbca58ed4af83.jpg)<br>*   Execute Linux commands from the singularity image.  <br>    从奇点映像执行 Linux 命令。  <br>    First, we ask to show the distro information of the client (the image), and it is a Ubuntu 18.04  <br>    首先，我们要求显示客户端（镜像）的发行版信息，它是 Ubuntu 18.04  <br>      <br>    ![](1691122292-75f5f171f9d4085ea8f4db5458aa8879.jpg)<br>*   Then, we call python3 from the image.  <br>    然后，我们从图像中调用 python3。  <br>      <br>    ![](1691122292-fdb787ad1ae674a0909f4c6b1155e120.jpg) |
     
       
     
