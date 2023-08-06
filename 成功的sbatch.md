@@ -1,3 +1,6 @@
+# scratch.sh
+
+```bash
 #!/bin/bash
 #SBATCH --partition=gpu_short
 #SBATCH --nodes=1                # 1 computer nodes
@@ -14,3 +17,5 @@ cd /home/zihanwu7/scratch/own_transformer
 python main.test.py >> $OUTPUT
 
 date        >> $OUTPUT
+```
+
