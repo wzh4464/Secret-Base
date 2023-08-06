@@ -18,4 +18,3 @@ python main.test.py >> $OUTPUT
 
 date        >> $OUTPUT
 ```
-
