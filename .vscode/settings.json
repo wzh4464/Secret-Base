@@ -1,0 +1,4 @@
+{
+    "githubRepositories.autoFetch.enabled": false,
+    "azureRepos.autoFetch.enabled": false
+}
