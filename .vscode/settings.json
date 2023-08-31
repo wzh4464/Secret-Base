@@ -1,4 +1,14 @@
 {
     "githubRepositories.autoFetch.enabled": false,
-    "azureRepos.autoFetch.enabled": false
+    "azureRepos.autoFetch.enabled": false,
+    "workbench.colorCustomizations": {
+        "editor.selectionBackground": "#72c6fa",
+        "editor.selectionHighlightBackground": "#cad645",
+        "statusBar.background": "#005f5f",
+        "statusBar.noFolderBackground": "#005f5f",
+        "statusBar.debuggingBackground": "#005f5f",
+        "activityBar.background": "#421F38",
+        "titleBar.activeBackground": "#5C2B4E",
+        "titleBar.activeForeground": "#FCF9FB"
+    }
 }
