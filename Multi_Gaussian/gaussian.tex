@@ -3,7 +3,7 @@
  % Created Date: Monday September 4th 2023
  % Author: Zihan
  % -----
- % Last Modified: Monday, 4th September 2023 9:33:58 pm
+ % Last Modified: Tuesday, 5th September 2023 8:35:26 am
  % Modified By: the developer formerly known as Zihan at <wzh4464@gmail.com>
  % -----
  % HISTORY:
@@ -89,13 +89,17 @@ The characteristic function of the generalized Gaussian distribution is given by
 \end{proof}
 
 \section{Co-variance Matrix}
-$$ \phi(t)=\exp\left(-\frac{1}{2}t^{\top}Bt+i\mu^{\top}t\right) $$
+$$ \phi(u)=\exp\left(-\frac{1}{2}u^{\top}Bu+i\mu^{\top}t\right) $$
 \begin{align}
-    \operatorname{E}[X_i X_j]&=\frac{\partial^2 \phi}{\partial t_i \partial t_j}(0) \\
-    &=\frac{\partial}{\partial t_i} \frac{\partial}{\partial t_j} \bigg|_{t=0} \exp \left(-\frac{1}{2} t^{\top} B t+i \mu^{\top} t\right) \\
-    &=\frac{\partial}{\partial t_i} \bigg|_{t_i=0} \left( \exp \left(-\frac{1}{2} t^{\top} B t+i \mu^{\top} t\right) \frac{\partial}{\partial t_j}\bigg|_{t_j=0} \left(-\frac{1}{2} t^{\top} B t+i \mu^{\top} t\right) \right) \\
-    &=\frac{\partial}{\partial t_i} \bigg|_{t_i=0} \left( \exp \left(-\frac{1}{2} t^{\top} B t+i \mu^{\top} t\right) \left(-\frac{1}{2} b_{ij} t_j - \frac{1}{2} \delta_{ij} b_{jj} t_j + i \mu_j \right) \right) \\
-    % &=\frac{\partial}{\partial t_i} \bigg|_{t_i=0} \left( \exp \left(-\frac{1}{2} t^{\top} B t+i \mu^{\top} t\right) \left(-\frac{1}{2} b_{ij} t_j + i \mu_j \right) \right) \\
+    \operatorname{E}[X_i X_j]&=- \frac{\partial^2 \phi}{\partial u_i \partial u_j}(0) \\
+    &=- \frac{\partial}{\partial u_i} \frac{\partial}{\partial u_j} \bigg|_{t=0} \exp \left(-\frac{1}{2} t^{\top} B t+i \mu^{\top} t\right) \\
+    &=\mu_i \mu_j + \frac{1}{2} B_{ij} + \frac{1}{2} \delta_{ij} 
+\end{align}
+
+\begin{align}
+    \operatorname{Cov}[X_i,X_j]&=\operatorname{E}[(X_i-\mu_i)(X_j-\mu_j)] \\
+    &=\operatorname{E}[X_i X_j]-\mu_i \operatorname{E}[X_j]-\mu_j \operatorname{E}[X_i]+\mu_i \mu_j \\
+    &=\frac{1}{2} B_{ij} + \frac{1}{2} \delta_{ij}
 \end{align}
 
 \end{document}
