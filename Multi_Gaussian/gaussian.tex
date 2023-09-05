@@ -3,7 +3,7 @@
  % Created Date: Monday September 4th 2023
  % Author: Zihan
  % -----
- % Last Modified: Tuesday, 5th September 2023 8:35:26 am
+ % Last Modified: Tuesday, 5th September 2023 10:34:39 am
  % Modified By: the developer formerly known as Zihan at <wzh4464@gmail.com>
  % -----
  % HISTORY:
@@ -91,15 +91,34 @@ The characteristic function of the generalized Gaussian distribution is given by
 \section{Co-variance Matrix}
 $$ \phi(u)=\exp\left(-\frac{1}{2}u^{\top}Bu+i\mu^{\top}t\right) $$
 \begin{align}
-    \operatorname{E}[X_i X_j]&=- \frac{\partial^2 \phi}{\partial u_i \partial u_j}(0) \\
-    &=- \frac{\partial}{\partial u_i} \frac{\partial}{\partial u_j} \bigg|_{t=0} \exp \left(-\frac{1}{2} t^{\top} B t+i \mu^{\top} t\right) \\
-    &=\mu_i \mu_j + \frac{1}{2} B_{ij} + \frac{1}{2} \delta_{ij} 
+    \operatorname{E}[X_i X_j] & =- \frac{\partial^2 \phi}{\partial u_i \partial u_j}(0)                                                                                \\
+                              & =- \frac{\partial}{\partial u_i} \frac{\partial}{\partial u_j} \bigg|_{t=0} \exp \left(-\frac{1}{2} t^{\top} B t+i \mu^{\top} t\right) \\
+                              & =\mu_i \mu_j + \frac{1}{2} B_{ij} + \frac{1}{2} \delta_{ij}
 \end{align}
 
 \begin{align}
-    \operatorname{Cov}[X_i,X_j]&=\operatorname{E}[(X_i-\mu_i)(X_j-\mu_j)] \\
-    &=\operatorname{E}[X_i X_j]-\mu_i \operatorname{E}[X_j]-\mu_j \operatorname{E}[X_i]+\mu_i \mu_j \\
-    &=\frac{1}{2} B_{ij} + \frac{1}{2} \delta_{ij}
+    \operatorname{Cov}[X_i,X_j] & =\operatorname{E}[(X_i-\mu_i)(X_j-\mu_j)]                                                      \\
+                                & =\operatorname{E}[X_i X_j]-\mu_i \operatorname{E}[X_j]-\mu_j \operatorname{E}[X_i]+\mu_i \mu_j \\
+                                & =\frac{1}{2} B_{ij} + \frac{1}{2} \delta_{ij}
 \end{align}
 
+\section{Co-variance Matrix for Brownian Motion ($2$-stage)}
+\begin{align*}
+    P^0(B_{t_1} \in F_1, B_{t_2} \in F_2) & =  \int_{F_1 \times F_2} p(t_1, 0, x_1) p(t_2-t_1, x_1, x_2) \mathrm{d}x_{1} \mathrm{d}x_2 \\
+    \operatorname{E}[B_{t_1} B_{t_2}]     & =  \int_{\mathbb{R}^2} x_1 x_2 p(t_1, 0, x_1) p(t_2-t_1, x_1, x_2) \mathrm{d}x_{1} \mathrm{d}x_2 \\
+    &= \int_{\mathbb{R}^2} x_1 x_2 \frac{\exp \left(-\frac{x_1^2}{2 t_1}\right)}{(\sqrt{2 \pi t_1})^{n} } \frac{\exp \left(-\frac{(x_2-x_1)^2}{2 (t_2-t_1)}\right)}{(\sqrt{2 \pi (t_2-t_1)})^{n} } \mathrm{d}x_{1} \mathrm{d}x_2 \\
+    &= (2\pi)^{-n} [t_1(t_2-t_1)]^{-n/2} \int_{\mathbb{R}^2} x_1 x_2 \exp \left(-\frac{x_1^2}{2 t_1}-\frac{(x_2-x_1)^2}{2 (t_2-t_1)}\right) \mathrm{d}x_{1} \mathrm{d}x_2 \\
+    % define as
+    &\triangleq (2\pi)^{-n} [t_1(t_2-t_1)]^{-n/2} I \\
+\end{align*}
+\begin{align*}
+    I &= \int_{\mathbb{R}^2} x_1 x_2 \exp \left(-\frac{x_1^2}{2 t_1}-\frac{(x_2-x_1)^2}{2 (t_2-t_1)}\right) \mathrm{d}x_{1} \mathrm{d}x_2 \\
+    &= \int_{-\infty}^{\infty} x_1 \exp \left(-\frac{x_1^2}{2 t_1}\right) \mathrm{d}x_1 \int_{-\infty}^{\infty} x_2 \exp \left(-\frac{(x_2-x_1)^2}{2 (t_2-t_1)}\right) \mathrm{d}x_2 \\
+    &= \int_{-\infty}^{\infty} x_1^2 \exp \left(-\frac{x_1^2}{2 t_1}\right) \mathrm{d}x_1 C_1 \\
+    &= t_1^2 C_1 C_2
+\end{align*}
+Thus we have:
+\begin{equation}
+    \operatorname{E}[B_{t_1} B_{t_2}] = t_1^2
+\end{equation}
 \end{document}
