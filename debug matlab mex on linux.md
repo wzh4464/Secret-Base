@@ -12,6 +12,7 @@
 - `code --no-sandbox ----user-data-dir /home/zihanwu7/tmp`
 - install `LLDB` extention
 - use attach form
+
 ```json
 {
     // 使用 IntelliSense 以得知可用的屬性。
@@ -28,6 +29,7 @@
     ]
 }
 ```
+
 - `matlab -nosplash -nodesktop -debug`
 - attach it and enjoy debugging!
   
