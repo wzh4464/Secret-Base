@@ -19,35 +19,37 @@ where $e_i$ is a $\mathcal{F}_{t_{i}}$-measurable random variable.
 For $\phi$ is an elementary function, we define the Ito integral of $\phi$ as
 
 $$
-\int_{S}^{T} \phi(\omega, t) \mathrm{d}B_t = \sum_{i=0}^{n-1} e_i(\omega) (B_{t_{i+1}} - B_{t_{i}})
+\int_{S}^{T} \phi(t, \omega) \mathrm{d}B_t = \sum_{i=0}^{n-1} e_i(\omega) (B_{t_{i+1}} - B_{t_{i}})
 $$
 
 The Ito isometry states that
 
 $$
-\mathbb{E} \left[ \left( \int_{S}^{T} \phi(\omega, t) \mathrm{d}B_t \right)^2 \right] = \mathbb{E} \left[ \int_{S}^{T} \phi^2(\omega, t) \mathrm{d}t \right]
+\mathbb{E} \left[ \left( \int_{S}^{T} \phi(t, \omega) \mathrm{d}B_t \right)^2 \right] = \mathbb{E} \left[ \int_{S}^{T} \phi^2(t, \omega) \mathrm{d}t \right]
 $$
 
 ## 3. Ito Integral
 
-### Assesment
+### $\mathcal{V}$
 
-Denote the class we want to define the integral as $\mathcal{V}$. Let $\mathcal{V} = \mathcal{V}(S, T)$ be the class of all functions $f(\omega, t): [0, \infty) \times \Omega \rightarrow \mathbb{R}$ such that
+Denote the class we want to define the integral as $\mathcal{V}$. Let $\mathcal{V} = \mathcal{V}(S, T)$ be the class of all functions $f(t, \omega): [0, \infty) \times \Omega \rightarrow \mathbb{R}$ such that
 
-1. $f(\omega, t)$ is $\mathcal{B} \times \mathcal{F}$-measurable, where $\mathcal{B}$ is the Borel $\sigma$-algebra on $[0, \infty)$.
+1. $f(t, \omega)$ is $\mathcal{B} \times \mathcal{F}$-measurable, where $\mathcal{B}$ is the Borel $\sigma$-algebra on $[0, \infty)$.
 
-2. $f(\omega, t): \omega \mapsto f(\omega, t)$ is $\mathcal{F}_t$-measurable for each $t \geq 0$.
+2. $f(t, \omega): \omega \mapsto f(t, \omega)$ is $\mathcal{F}_t$-measurable for each $t \geq 0$.
 
-3. $\mathbb{E} \left[ \int_{0}^{\infty} f^2(\omega, t) \mathrm{d}t \right] < \infty$.
+3. $\mathbb{E} \left[ \int_{0}^{\infty} f^2(t, \omega) \mathrm{d}t \right] < \infty$.
 
 ### Step 1
 
 <span style="color:red">Handle the **bounded** and **continuous** case.</span>
 
+*Bounded and continuous functions in $\mathcal{V}$ can be approximated by elementary functions.*
+
 **Lemma 1.** If $g \in \mathcal{V}$ is bounded and continuous, then there exists a sequence of elementary functions $\phi_n \in \mathcal{V}$ such that
 
 $$
-\mathbb{E} \left[ \int_{S}^{T} (g(\omega, t) - \phi_n(\omega, t))^2 \mathrm{d}t \right] \rightarrow 0
+\mathbb{E} \left[ \int_{S}^{T} (g(t, \omega) - \phi_n(t, \omega))^2 \mathrm{d}t \right] \rightarrow 0
 $$
 
 as $n \rightarrow \infty$.
@@ -70,7 +72,7 @@ Here bounded convergence theorem is used.
 Define $\phi_n$ as
 
 $$
-\phi_n(\omega, t) = \sum_{i=0}^{n-1} g(t_i, \omega) \chi_{[t_{i}, t_{i+1})}(t)
+\phi_n(t, \omega) = \sum_{i=0}^{n-1} g(t_i, \omega) \chi_{[t_{i}, t_{i+1})}(t)
 $$
 thus $\phi_n$ is an elementary function.
 
@@ -108,13 +110,15 @@ Here we just need to verify that $I_n(\omega)$ is bounded and measurable, then w
 
 <span style="color:red">Handle the **bounded** (but not necessarily continuous) case.</span>
 
+Bounded functions in $\mathcal{V}$ can be approximated by bounded and continuous functions.
+
 **Lemma 2.** If $h \in \mathcal{V}$ is bounded, then $\exists$ bounded and continuous functions $g_n$ such that 
 $$
 \mathbb{E} \left[ \int_{S}^{T} (h - g_n)^2 \mathrm{d}t \right] \rightarrow 0, \text{as } n \rightarrow \infty
 $$
 
-<!-- <details>
-<summary>Proof of Lemma 2.</summary> -->
+<details>
+<summary>Proof of Lemma 2.</summary>
 
 Suppose $h$ is bounded by $M$, first $\phi_n : \mathbb{R} \rightarrow \mathbb{R}$ is constructed as follows:
 
@@ -139,4 +143,54 @@ $$
 - $g_n$ ($n=5$):
 <img src="ito_g.png" width="300">
 
-<!-- </details> -->
+</details>
+
+### Step 3
+
+<span style="color:red">Handle the **general** case.</span>
+
+Every function in $\mathcal{V}$ can be approximated by bounded functions.
+
+**Lemma 3.** If $f \in \mathcal{V}$, then there exists a sequence of bounded functions $h_n \in \mathcal{V}$ such that
+
+$$
+\mathbb{E} \left[ \int_{S}^{T} (f - h_n)^2 \mathrm{d}t \right] \rightarrow 0, \text{as } n \rightarrow \infty
+$$
+
+<details>
+<summary>Proof of Lemma 3.</summary>
+
+For each $n$, let $h_n$ satisfy
+$$
+h_n(t, \omega) = \begin{cases}
+f(t, \omega), & |f(t, \omega)| \le n \\
+n, & f(t, \omega) > n \\
+-n, & f(t, \omega) < -n
+\end{cases}
+$$
+
+By **Dominated Convergence Theorem**, we have the desired result.
+
+</details>
+
+### Definition of Ito Integral
+
+**Definition 1.** If $f \in \mathcal{V}$, one can find  a sequence of elementary functions $\phi_n \in \mathcal{V}$ such that
+
+$$
+\mathbb{E} \left[ \int_{S}^{T} (f - \phi_n)^2 \mathrm{d}t \right] \rightarrow 0, \text{as } n \rightarrow \infty
+$$
+
+Then we define the Ito integral of $f$ as
+
+$$
+\int_{S}^{T} f(t, \omega) \mathrm{d}B_t = \lim_{n \rightarrow \infty} \int_{S}^{T} \phi_n(t, \omega) \mathrm{d}B_t
+$$
+
+The limit exists in $L^2(\Omega)$ since $L^2(\Omega)$ is complete and 
+
+Denote $J_n(\omega) = \int_{S}^{T} \phi_n(t, \omega) \mathrm{d}B_t$, then
+
+$$
+J_{n+k}(\omega) - J_n(\omega) = \int_{S}^{T} (\phi_{n+k} - \phi_n) \mathrm{d}B_t
+$$
