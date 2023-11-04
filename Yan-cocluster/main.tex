@@ -3,7 +3,7 @@
  % Created Date: Sunday September 10th 2023
  % Author: Zihan
  % -----
- % Last Modified: Thursday, 21st September 2023 12:53:40 am
+ % Last Modified: Thursday, 21st September 2023 11:01:00 am
  % Modified By: the developer formerly known as Zihan at <wzh4464@gmail.com>
  % -----
  % HISTORY:
@@ -103,7 +103,7 @@ $$\lambda \le \max(||B||_1, ||B^\top||_1)/\sigma^2.$$
 \subsection{Score}
 The score of a submatrix $A_{I,J}$ is defined as
 \begin{align}
-    S(I,J)       & = \min(S_{row}(I,J), S_{col}(I,J))                                                                                   \\
+    S(I,J)       & = \min(S_{row}(I,J), S_{col}(I,J))                                                                                          \\
     S_{row}(I,J) & = \min_{i_1, i_2 \in I} \left(1- \frac{1}{|I|-1} \sum_{i_2 \in I, i_2 \neq i_1} \langle x_{i_1,J}, x_{i_2,J}\rangle \right) \\
     S_{col}(I,J) & = \min_{j_1, j_2 \in J} \left(1- \frac{1}{|J|-1} \sum_{j_2 \in J, j_2 \neq j_1} \langle x_{I,j_1}, x_{I,j_2}\rangle \right)
 \end{align}
@@ -112,45 +112,44 @@ $$\langle x, y \rangle = \exp(-\frac{||x - y||_1^2}{2\alpha||x||_1||y||_1})$$
 
 Suppose $A$ is a hidden co-cluster matrix, and $E$ is the noise matrix. Then the observed matrix is $B = A + E$. Consider co-cluster $B_{I,J}$, denote $1 - \frac{1}{|I|-1} \sum_{i_2 \in I, i_2 \neq i_1} \langle x_{i_1,J}, x_{i_2,J}\rangle$ as $s_{row}(i_1, i_2, J)$, then
 \begin{align*}
-    \mathbb{E}(s_{row}(i_1, i_2, J)) & = 1 - \frac{1}{|I|-1} \sum_{i_2 \in I, i_2 \neq i_1} \mathbb{E}(\langle x_{i_1,J}, x_{i_2,J}\rangle) \\
+    \mathbb{E}(s_{row}(i_1, i_2, J)) & = 1 - \frac{1}{|I|-1} \sum_{i_2 \in I, i_2 \neq i_1} \mathbb{E}(\langle x_{i_1,J}, x_{i_2,J}\rangle)                                    \\
                                      & = 1 - \frac{1}{|I|-1} \sum_{i_2 \in I, i_2 \neq i_1} \exp(-\frac{||x_{i_1,J} - x_{i_2,J}||_1^2}{2\alpha||x_{i_1,J}||_1||x_{i_2,J}||_1}) \\
-                                     & \ge 1 - \exp(-\frac{2}{\alpha \min(||x_{i_1,J}||_1, ||x_{i_2,J}||_1)}) \\
-                                        & \ge 1 - \exp(-\frac{2}{\alpha \max(||B||_1, ||B^\top||_1)}) \\
-    \sigma^2(s_{row}(i_1, i_2, J))   & = \frac{1}{|I|-1} \sum_{i_2 \in I, i_2 \neq i_1} \sigma^2(\langle x_{i_1,J}, x_{i_2,J}\rangle) \\
-                                     & = \frac{1}{|I|-1} \sum_{i_2 \in I, i_2 \neq i_1} \exp(-\frac{||x_{i_1,J} - x_{i_2,J}||_1^2}{2\alpha||x_{i_1,J}||_1||x_{i_2,J}||_1}) \\
-                                     & \le \sigma^2 \exp(-\frac{2}{\alpha \min(||x_{i_1,J}||_1, ||x_{i_2,J}||_1)}) \\
-                                        & \le \sigma^2 \exp(-\frac{2}{\alpha \max(||B||_1, ||B^\top||_1)}) \\
+                                     & \ge 1 - \exp(-\frac{2}{\alpha \min(||x_{i_1,J}||_1, ||x_{i_2,J}||_1)})                                                                  \\
+                                     & \ge 1 - \exp(-\frac{2}{\alpha \max(||B||_1, ||B^\top||_1)})                                                                             \\
+    \sigma^2(s_{row}(i_1, i_2, J))   & = \frac{1}{|I|-1} \sum_{i_2 \in I, i_2 \neq i_1} \sigma^2(\langle x_{i_1,J}, x_{i_2,J}\rangle)                                          \\
+                                     & = \frac{1}{|I|-1} \sum_{i_2 \in I, i_2 \neq i_1} \exp(-\frac{||x_{i_1,J} - x_{i_2,J}||_1^2}{2\alpha||x_{i_1,J}||_1||x_{i_2,J}||_1})     \\
+                                     & \le \sigma^2 \exp(-\frac{2}{\alpha \min(||x_{i_1,J}||_1, ||x_{i_2,J}||_1)})                                                             \\
+                                     & \le \sigma^2 \exp(-\frac{2}{\alpha \max(||B||_1, ||B^\top||_1)})                                                                        \\
 \end{align*}
 
 Thus the expected value of $S_{row}(I,J)$ satisfies
 \begin{align*}
     \mathbb{E}(S_{row}(I,J)) & \ge |J||I| \left(1 - \exp(-\frac{2}{\alpha \max(||B||_1, ||B^\top||_1)}) \right) \\
-    \sigma^2(S_{row}(I,J))   & \le |I||J| \sigma^2 \exp(-\frac{2}{\alpha \max(||B||_1, ||B^\top||_1)}) \\
+    \sigma^2(S_{row}(I,J))   & \le |I||J| \sigma^2 \exp(-\frac{2}{\alpha \max(||B||_1, ||B^\top||_1)})          \\
 \end{align*}
 
 Similarly, we can get
 \begin{align*}
     \mathbb{E}(S_{col}(I,J)) & \ge |J||I| \left(1 - \exp(-\frac{2}{\alpha \max(||B||_1, ||B^\top||_1)}) \right) \\
-    \sigma^2(S_{col}(I,J))   & \le |I||J| \sigma^2 \exp(-\frac{2}{\alpha \max(||B||_1, ||B^\top||_1)}) \\
+    \sigma^2(S_{col}(I,J))   & \le |I||J| \sigma^2 \exp(-\frac{2}{\alpha \max(||B||_1, ||B^\top||_1)})          \\
 \end{align*}
 
 Then since $x^2 \le x$ for $x \in (0,1)$, we have
 \begin{align*}
-    \mathbb{E}(S(I,J)) & \ge 1 - \exp(-\frac{2}{\alpha \max(||B||_1, ||B^\top||_1)}) \\
+    \mathbb{E}(S(I,J)) & \ge 1 - \exp(-\frac{2}{\alpha \max(||B||_1, ||B^\top||_1)})             \\
     \sigma^2(S(I,J))   & \le |I||J| \sigma^2 \exp(-\frac{2}{\alpha \max(||B||_1, ||B^\top||_1)}) \\
 \end{align*}
 
 According to the Chernoff bound, we have
 \begin{align*}
-    P(S(I,J) \le \mathbb{E}(S(I,J)) - \epsilon) & \le \exp(-\frac{\epsilon^2}{2\sigma^2(S(I,J))}) \\
-                                                 & \le \exp(-\frac{\epsilon^2}{2|I||J| \sigma^2 \exp(-\frac{2}{\alpha \max(||B||_1, ||B^\top||_1)})}) \\
-                                                 & \le \exp(-\frac{\epsilon^2}{2|I||J| \sigma^2 \exp(-\frac{2}{\alpha \lambda})}) \\
+    P(S(I,J) \le \mathbb{E}(S(I,J)) - \epsilon)
+     & \ge \exp(-\frac{\epsilon^2}{2|I||J| \sigma^2 \exp(-\frac{2}{\alpha \lambda})}) \\
 \end{align*}
 
 Thus if we set $\epsilon = \sqrt{2|I||J| \sigma^2 \exp(-\frac{2}{\alpha \lambda}) \log(1/\delta)}$, then
 
 \begin{align*}
-    P(S(I,J) \le \mathbb{E}(S(I,J)) - \epsilon) & \le \delta \\
+    P(S(I,J) \ge \mathbb{E}(S(I,J)) - \epsilon) & \ge \delta \\
 \end{align*}
 
 Combine with the probability control of $T_p$, we can select parameters to ensure the probability of detecting the co-cluster is larger than a given threshold.
