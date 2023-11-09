@@ -37,9 +37,10 @@ governmental short-term debt (T-bills) is often used as a proxy for the nominal 
 
 ### FUTURE VALUE OF A SINGLE CASH FLOW
 
-- Future value (FV) 
+- Future value (FV)
 - Present value (PV)
 - Number of periods (n)
+- Stated annual interest rate 是年利率，不是实际利率
 
 lump sum (一次性支付): 仍然是 $FV = PV(1+r)^n$
 Pension fund: 养老金
@@ -51,3 +52,39 @@ $$
 ### NON-ANNUAL COMPOUNDING (FUTURE VALUE)
 
 LO: calculate the solution for time value of money problems with different frequencies of compounding
+
+### Annuity (年金)
+
+- Ordinary annuity (普通年金): payments occur at the end of each period
+- Annuity due (年金): payments occur at the beginning of each period
+- Perpetuity (永续年金): an annuity with an infinite life
+
+### Mortgage (抵押贷款)
+
+- Down payment (首付)
+- We use the equation from annuity to calculate the monthly payment
+
+<!-- TODO: Need Review -->
+
+<div style="border: 1px solid red; padding: 10px;">
+
+e.g. 30-year mortgage, 8% interest rate, \$100,000 loan, monthly payment = \$733.76
+$$
+\begin{align*}
+FV &= 100,000 * (1+0.08/12)^{30*12} \\
+&=  1.903 * 10^6 \\
+A &= FV / \left(\frac{(1+0.08/12)^{30*12}-1}{0.08/12}\right) \\
+&= 733.7646
+\end{align*}
+$$
+</div>
+
+## Return
+
+### Geometric Mean Return
+
+$$
+\begin{align*}
+\text{Geometric Mean Return} &= \left(\prod_{i=1}^n (1+R_i)\right)^{1/n} - 1
+\end{align*}
+$$
