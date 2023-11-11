@@ -25,11 +25,15 @@ apt 安装的 zsh
 
 关闭自动睡眠
 
+```bash
 sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
+```
 
 ## 安装 gcc
 
+```bash
 sudo apt install build-essential
+```
 
 ## 安装p10k
 
@@ -85,3 +89,49 @@ p10k choose the first style
 
 - `sudo apt install liblapack-dev`
 - in `CMakeLists.txt` add `find_package(LAPACK REQUIRED)`
+
+## Example script for Ubuntu
+
+```bash
+sudo apt install zsh
+sudo apt install git
+sudo apt install curl
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
+
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
+# and add ZSH_THEME="powerlevel10k/powerlevel10k" to ~/.zshrc
+
+git clone https://github.com/esc/conda-zsh-completion ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/conda-zsh-completion
+
+# And add lines in `.zshrc`
+
+git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search
+
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+```
+
+```.zshrc
+plugins=(git zsh-autosuggestions gitignore conda-zsh-completion zsh-syntax-highlighting)
+
+source $ZSH/oh-my-zsh.sh
+autoload -U compinit && compinit
+
+# conda-zsh-completion
+zstyle ':completion::complete:*' use-cache 1
+zstyle ":conda_zsh_completion:*" use-groups true
+zstyle ":conda_zsh_completion:*" show-unnamed true
+zstyle ":conda_zsh_completion:*" show-global-envs-first true
+zstyle ':completion::complete:*' use-cache 1
+zstyle ":conda_zsh_completion:*" use-groups true
+zstyle ":conda_zsh_completion:*" show-unnamed true
+zstyle ":conda_zsh_completion:*" show-global-envs-first true
+
+# for gpg
+export GPG_TTY=$(tty) 
+gpgconf --launch gpg-agent
+```
