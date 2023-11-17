@@ -78,13 +78,3 @@ A &= FV / \left(\frac{(1+0.08/12)^{30*12}-1}{0.08/12}\right) \\
 \end{align*}
 $$
 </div>
-
-## Return
-
-### Geometric Mean Return
-
-$$
-\begin{align*}
-\text{Geometric Mean Return} &= \left(\prod_{i=1}^n (1+R_i)\right)^{1/n} - 1
-\end{align*}
-$$
