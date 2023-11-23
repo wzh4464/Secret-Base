@@ -78,3 +78,11 @@ A &= FV / \left(\frac{(1+0.08/12)^{30*12}-1}{0.08/12}\right) \\
 \end{align*}
 $$
 </div>
+
+### Compound Continuous
+
+连续复利
+
+$$
+FV = PV e^{r n}
+$$

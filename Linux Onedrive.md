@@ -19,3 +19,9 @@ onedrive --synchronize --verbose
 ```bash
 onedrive --synchronize --verbose --download-only "folder_name"
 ```
+
+## Stop sync
+
+```bash
+onedrive --synchronize --verbose --stop
+```
