@@ -8,4 +8,5 @@
 - pension: [n.] a regular payment made during a person's retirement from an investment fund to which that person or their employer has contributed during their working life, 养老金
 - lump-sum: [n.] a single payment made at a particular time, especially as part of an insurance claim or lottery win, 一次性付款
 - leverage: [n.] A measure for identifying a potentially influential high-leverage point. 杠杆
-
+- Treasury bills: [n.] a short-dated government security, yielding no interest but issued at a discount on its redemption price, 短期国债
+- equity: [n.] the value of the shares issued by a company, 股权
