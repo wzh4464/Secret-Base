@@ -10,3 +10,12 @@
 - leverage: [n.] A measure for identifying a potentially influential high-leverage point. 杠杆
 - Treasury bills: [n.] a short-dated government security, yielding no interest but issued at a discount on its redemption price, 短期国债
 - equity: [n.] the value of the shares issued by a company, 股权
+- YTM (yield to maturity): [n.] the total return anticipated on a bond if the bond is held until it matures, 债券到期收益率
+- coupon: [n.] the interest rate that a bond issuer will pay to a bondholder, 债券票面利率
+- par value: [n.] the nominal value of a bond, share of stock, or coupon as indicated in writing on the document or specified by charter, 面值
+- PMT (payment): [n.] the payment made each period and cannot change over the life of the annuity, 期付款
+- principal: [n.] the original sum of money borrowed in a loan, or put into an investment, 初始投资
+- discount bond: [n.] a bond that is issued for less than its par (or face) value, 债券折价
+- perpetual bond (consol): [n.] a bond with no maturity date, 永续债
+- redemption: [n.] the action of regaining or gaining possession of something in exchange for payment, or clearing a debt, 赎回
+- perpetuity: [n.] A perpetual annuity, or a set of never-ending level sequential cash flows, with the first cash flow occurring one period from now. 永续年金

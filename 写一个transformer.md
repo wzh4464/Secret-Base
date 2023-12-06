@@ -1,7 +1,7 @@
-写一个transformer
+# 写一个transformer
 
 wsl vscode tab 变成移动焦点了，似乎关闭了tab的vim绑定解决了？
-https://blog.csdn.net/mrbone11/article/details/100037354
+<https://blog.csdn.net/mrbone11/article/details/100037354>
 
 1. [x] ```wget <https://developer.download.nvidia.com/compute/cuda/repos/wsl-ubuntu/x86_64/cuda-wsl-ubuntu.pin>```
 1. [x] ```sudo mv cuda-wsl-ubuntu.pin /etc/apt/preferences.d/cuda-repository-pin-600```
