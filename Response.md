@@ -30,8 +30,11 @@ Consider the discrete approximation of any $M \in \mathcal{M}$, denoted as $P$. 
 
 Now suppose that the surface of a cell is a smooth manifold $M$ and its convex hull is a smooth manifold $N$. Let $P$ be the discrete surface of the cell and $Q$ be the discrete convex hull of the cell.
 
-$\forall \epsilon > 0$, $\exists \theta > 0$, such that $d(M, P) < \epsilon_1$, where $P = g_\theta(M)$ and $g_\theta$ is the discrete approximation of $M$.
+$\forall \epsilon_1 > 0$, $\exists \theta > 0$, such that $d(M, P) < \epsilon_1$, where $P = g_\theta(M)$ and $g_\theta$ is the discrete approximation of $M$.
 
-And denote the discrete approximation of $N$ as $Q' = g_{\theta}(N)$, then $d(N, Q') < \epsilon_2$.
+And denote the discrete approximation of $N$ as $Q' = g_{\theta}(N)$, then also for the given $\epsilon_2 > 0$, there exists an $\delta > 0$, such that $d(N, Q') < \epsilon_2$. As far as $\epsilon_1 < \delta$, then $d(M, P) < \epsilon_1 < \delta$, and $d(N, Q') < \epsilon_2$. Then we have $d(P, Q') < \epsilon_2$.
 
-Then we have $d(P, Q') < \epsilon_1 + \epsilon_2$.
+And for the other way, since $Q = f(P)$, then $d(Q, Q') < \epsilon_3$
+
+$$
+\begin{aligned}
