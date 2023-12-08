@@ -6,7 +6,7 @@
 2. gtk error
 
 ## Try
-```
+
 Same problem here. Ubuntu 22.04.  
 这里同样的问题。乌班图22.04。  
 Fixed by downgrading to 3.2.3.  
@@ -21,9 +21,8 @@ Put rsync on hold:
 
 Reinstall timeshift via apt.  
 通过 apt 重新安装 timeshift。
-```
 
-https://github.com/linuxmint/timeshift/issues/152
+<https://github.com/linuxmint/timeshift/issues/152>
 
 ## Order
 
@@ -44,15 +43,13 @@ Note that the first line tells `rsync` (timeshift) to include everything under
 Consequently you need to reorder your example like this:  
 因此，您需要像这样重新排序您的示例：
 
-```
+```bash
 - /home/nils/Dropbox/***
 + /home/nils/***
 + /root/**
 ```
 
 ## 仅控制台
-
-
 
 一些常用的内核文本模式参数:
 

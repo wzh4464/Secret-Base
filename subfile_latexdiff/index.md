@@ -15,9 +15,10 @@ The --flatten option does not help. Latexdiff version is 1.0.2.
 
 \--flatten 选项无济于事。Latexdiff 版本为 1.0.2。
 Example :
-
+****dd
 例：
 main.tex
+
 ```latex
 \documentclass[10pt]{article}
 \usepackage{subfiles}
@@ -26,7 +27,9 @@ main.tex
 \end{document}
 
 ```
+
 includeme.tex 包括我.tex
+
 ```latex
 \documentclass[main.tex]{subfiles}
 
@@ -34,16 +37,20 @@ includeme.tex 包括我.tex
 Text!
 \end{document}
 ```
+
 Running
 
 运行
+
 ```latex
 latexdiff d1/main.tex d2/main.tex --flatten > mydiff.tex
 ```
+
 the resulting document simply does not include the contents of the subfile.
 
 生成的文档根本不包含子文件的内容。
 mydiff.tex
+
 ```latex
 \documentclass[10pt]{article}
 %DIF LATEXDIFF DIFFERENCE FILE
@@ -53,6 +60,7 @@ mydiff.tex
 \subfile{includeme.tex}
 \end{document}
 ```
+
 So yes, the problem lies with the flatten pipeline/workflow, which does not seem to be made to work with \\subfile{includeme.tex} includes.
 
 所以是的，问题出在扁平化的管道/工作流上，它似乎不适用于 `\subfile{includeme.tex}` 包含。
@@ -98,7 +106,9 @@ _For posterity:_ at least as of `latexdiff version 1.1.1`, using the `--flatten`
 [Jun 1, 2017 at 12:58](#comment921132_167620)
 
 [Show **1** more comment](# "Expand to show all comments on this post")
+
 ## 3 Answers
+
 Sorted by:
 Highest score (default) Date modified (newest first) Date created (oldest first)
 8
@@ -121,7 +131,6 @@ Now all that remains is to automate this. The following line is a hacky way to a
 
 现在剩下的就是自动化。以下行是实现一些自动化作为概念验证的黑客方法，但实际上需要扩展为更强大、更灵活的小 shell 脚本：
 `grep -v '^%' main.tex | grep subfile\{ | sed 's/^.*subfile{\(.*\)}.*$/\1/' \ | awk '{ print "latexdiff -pnull d1/" $1, "d2/" $1,">", $1 }' | sh`
-
 
 I have noted the OP question as a feature request and eventually the --flatten option of latexdiff might be updated to deal with this 'natively'. The 'null' file workaround will probably not be necessary from version 1.0.4 onwards (not yet released at the time of writing)
 
@@ -151,11 +160,10 @@ Note that latexdiff version 1.0.4 is now released and --flatten supports \\subfi
 
 @frederik 如果子文件位于使用 `\def\input@path{{./tex/} {./} {../}}` .
 
-
-
 2 years after the question was asked, but I ended up writing a batch file for solving this in a windows environment:
 
 在提出这个问题 2 年后，但我最终编写了一个批处理文件来在 Windows 环境中解决这个问题：
+
 ```latex
 @echo off
 setlocal
@@ -171,10 +179,10 @@ rm flat.tex
 rm %old_path%flat.tex
 ```
 
-
 Post above [link](https://tex.stackexchange.com/a/346316/243072) was very helpful, but I made my modified version that you can use.
 
 上面的链接非常有帮助，但我制作了您可以使用的修改版本。
+
 ```latex
 @echo off
 setlocal
