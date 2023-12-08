@@ -1,8 +1,13 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath, amssymb}
+% \usepackage[backend=biber,style=verbose-trad2]{biblatex}
+% IEEE style
+\usepackage[backend=biber,style=ieee]{biblatex}
+\bibliography{ref}
+
 \title{Exploring Discrete Approximations of Manifolds in Computational Geometry}
-\author{Author Name}
+\author{Biber}
 \date{}
 
 \begin{document}
@@ -28,9 +33,12 @@ An important aspect of \( g_\theta \) is the error introduced during the discret
 The fidelity of \( P \) in representing \( M \) is crucial for algorithms in computational geometry. Despite the inherent approximation, \( P \) maintains most of the critical geometric properties of \( M \), allowing for effective algorithmic processing.
 
 \subsection{Algorithmic Considerations}
-The discrete nature of \( P \) introduces unique computational challenges and opportunities. Algorithms must be adapted to handle the discrete structure efficiently, balancing accuracy and computational complexity.
+The discrete nature of \( P \) introduces unique computational challenges and opportunities. Algorithms must be adapted to handle the discrete structure efficiently, balancing accuracy and computational complexity.\autocite{coeurjolly2001DiscreteCurvatureBased}
 
 \section{Conclusion}
 Our exploration underscores the significance of the mesh functor \( g_\theta \) in bridging the gap between theoretical manifolds and their practical computational counterparts. This understanding is pivotal for advancing methods in computational geometry and related fields.
+\autocite{wu2020DeltaGradRapidRetraining}
+
+\printbibliography
 
 \end{document}
