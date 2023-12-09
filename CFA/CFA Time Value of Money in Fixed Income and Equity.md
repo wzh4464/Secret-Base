@@ -25,28 +25,4 @@ Cash flows from fixed-income instruments:
 - Perioidic payments(定期支付): 一段时间内的多次支付
 - Level payments(定额支付): 每期支付相同金额
 
-#### Example 1: Discount Instruments
-
-$$
-\begin{aligned}
-\text{PV} &= \frac{\text{FV}}{(1+r)^t}
-\end{aligned}
-$$
-
-#### Example 2: Coupon Instruments
-
-$$
-\begin{aligned}
-\text{PV} &= \frac{\text{C}}{(1+r)^1} + \frac{\text{C}}{(1+r)^2} + \cdots + \frac{\text{C}+\text{FV}}{(1+r)^t} \\
-&= \text{C} \times \frac{1-\frac{1}{(1+r)^t}}{r} + \frac{\text{FV}}{(1+r)^t}
-\end{aligned}
-$$
-
-#### Example 3: Annuity Instruments (定额支付)
-
-$$
-\begin{aligned}
-A = \frac{r(PV)}{1-(1+r)^{-t}}
-\end{aligned}
-$$
-where $A$ is the annuity payment, $r$ is the interest rate, $PV$ is the present value, and $t$ is the number of periods.
+固定收益工具是一种债务工具，例如债券或贷款，它们代表着发行人向投资者借款并承诺未来偿还的合同。固定收益工具的贴现率是一种利率，而债券或贷款的回报率通常被称为其到期收益率（YTM）。

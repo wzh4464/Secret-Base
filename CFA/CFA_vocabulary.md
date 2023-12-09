@@ -19,3 +19,9 @@
 - perpetual bond (consol): [n.] a bond with no maturity date, 永续债
 - redemption: [n.] the action of regaining or gaining possession of something in exchange for payment, or clearing a debt, 赎回
 - perpetuity: [n.] A perpetual annuity, or a set of never-ending level sequential cash flows, with the first cash flow occurring one period from now. 永续年金
+- discretionary: [adj.] available for use at the discretion of the user, 任意的
+- equity instrument: [n.] a contract that evidences a residual interest in the assets of an entity after deducting all of its liabilities, 股权工具
+- corporate bond: [n.] a bond issued by a corporation in order to raise financing for a variety of reasons such as to ongoing operations, M&A, or to expand business, 公司债券
+- YTM (yield to maturity): [n.] the total return anticipated on a bond if the bond is held until it matures, 债券到期收益率
+- principal payment: [n.] the portion of a loan payment that goes towards paying down the outstanding balance of the loan, 本金偿还
+- annulized: [adj.] to convert a rate of any length into a rate that reflects one year, 年化的
