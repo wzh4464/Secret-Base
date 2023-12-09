@@ -11,5 +11,9 @@
         "titleBar.activeBackground": "#5C2B4E",
         "titleBar.activeForeground": "#FCF9FB"
     },
-    "editor.tabSize": 2
+    "editor.tabSize": 2,
+    // ignore markdown MD024
+    "markdownlint.config": {
+        "MD024": false
+    }
 }
