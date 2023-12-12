@@ -14,6 +14,8 @@
     "editor.tabSize": 2,
     // ignore markdown MD024
     "markdownlint.config": {
-        "MD024": false
-    }
+        "MD024": false,
+        "MD025": false
+    },
+    "svg.preview.background": "white"
 }
