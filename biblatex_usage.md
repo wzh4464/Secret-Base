@@ -4,7 +4,7 @@
 
 ```latex
 \documentclass{article}
-\usepackage[backend=biber,style=IEEE]{biblatex}
+\usepackage[backend=biber,style=numeric]{biblatex}
 \bibliography{biblatex_usage}
 
 \begin{document}
