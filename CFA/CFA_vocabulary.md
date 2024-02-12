@@ -25,3 +25,8 @@
 - YTM (yield to maturity): [n.] the total return anticipated on a bond if the bond is held until it matures, 债券到期收益率
 - principal payment: [n.] the portion of a loan payment that goes towards paying down the outstanding balance of the loan, 本金偿还
 - annulized: [adj.] to convert a rate of any length into a rate that reflects one year, 年化的
+- subordinated [adj.] (of a loan) only to be paid after other debts have been paid, 次级的
+- debenture [n.] a medium to long-term debt format that is used by large companies to borrow money at a fixed rate of interest, 债券
+- subordinated debenture: [n.] a type of loan that is paid after other debts if a company falls into liquidation, 次级债券
+- outstanding shares: [n.] the number of shares of a company that are currently owned by investors, 流通股
+- 
