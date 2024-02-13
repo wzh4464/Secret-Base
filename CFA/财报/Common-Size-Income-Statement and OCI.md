@@ -28,10 +28,20 @@ Other comprehensive income (OCI) is a measure of income that includes items that
 
 OCI includes items such as:
 
-1. Foreign currency translation gains and losses. 外币兑换损益
-2. Adjustments for minimum pension liability. 最低养老金责任的调整
+4+1, 1 是 IFRS 特有的
+
+4: for both
+
+1. Foreign currency translation gains and losses.
+<span style="color:red"> 外币报表折算 transaction 不算， translation 才算 </span>
+
+2. Certain costs associated with defined benefit pension plans.
 3. Unrealized gains and losses from cash low hedging derivatives. 现金流量套期保值衍生工具的未实现收益和损失
 4. Unrealized gains and losses from available-for-sale securities. 可供出售证券的未实现收益和损失
+
+One for IFRS only
+
+the changes of the value of long-lived assets under revaluation model.
 
 Retained earnings: the cumulative earnings of a company that have not been paid out as dividends. 公司的累计收益，未支付为股息。
 
