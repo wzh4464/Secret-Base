@@ -63,5 +63,5 @@ $$
 - Pre-tax margin: EBT/Net Revenue
 - Net profit margin: Net Income/Net Revenue
 - Return on Asset (ROA): Net Income/Average Total Asset
-- Return on Equity (ROE): Net Income/Average Total Equity
+- Return on Equity (ROE): Net Income/Average Total Equity <span style="color:red"> 1块钱资产能赚多少净利润 </span>
 - Return on total capital: EBIT/Average Total Capital <span style="color:red"> EBIT 除以总资本 </span>
