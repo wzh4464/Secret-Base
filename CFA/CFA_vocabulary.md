@@ -29,4 +29,18 @@
 - debenture [n.] a medium to long-term debt format that is used by large companies to borrow money at a fixed rate of interest, 债券
 - subordinated debenture: [n.] a type of loan that is paid after other debts if a company falls into liquidation, 次级债券
 - outstanding shares: [n.] the number of shares of a company that are currently owned by investors, 流通股
-- 
+- pertinent [adj.] relevant or applicable to a particular matter, 相关的
+- vested interest: [n.] a strong personal interest in something because you could get an advantage from it, 既得利益
+- stakeholder: [n.] a person with an interest or concern in something, especially a business, 利益相关者
+- stake [n.] a share or a financial involvement in something such as a business, 份额
+- activist shareholder: [n.] a shareholder who uses an equity stake in a corporation to put pressure on its management, 激进股东
+- upside [n.] the potential for a higher position or profit, 上升空间
+- amid [prep.] surrounded by; in the middle of, 在...之中
+- incentive [n.] a thing that motivates or encourages someone to do something, 激励
+- implication [n.] the conclusion that can be drawn from something although it is not explicitly stated, 含义
+- CCC (cash conversion cycle): [n.] a metric that expresses the length of time, in days, that it takes for a company to convert resource inputs into cash flows, 现金转换周期
+- DSO (days sales outstanding): [n.] a measure of the average number of days that a company takes to collect revenue after a sale has been made, 应收账款周转天数
+- DPO (days payable outstanding): [n.] a financial ratio that indicates the average time (in days) that a company takes to pay its bills and invoices to its trade creditors, 应付账款周转天数
+- DIO (days inventory outstanding): [n.] a financial ratio that indicates the average time (in days) that a company takes to turn its inventory into sales, 存货周转天数
+- Accrued expenses [n.] are expenses a company has incurred but has not yet paid, 应计费用
+- outlay [n.] an amount of money spent on something, 支出
