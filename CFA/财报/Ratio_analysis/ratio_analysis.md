@@ -17,6 +17,15 @@ $$
 $$
 ![Period 之间关系](2024-02-14_11-52-49.jpg)
 
+- DPO (Days Payable Outstanding): Accounts Payable / COGS * 365
+- DSO (Days Sales Outstanding): Accounts Receivable / Net Revenue * 365
+- DIO (Days Inventory Outstanding): Inventory / COGS * 365
+- CCC (Cash Conversion Cycle): DSO + DIO - DPO
+- OC (Operating Cycle): DSO + DIO
+
+Note: Revenue is recognized when the goods are shipped. So the DSO is calculated based on the revenue, not the received cash.
+![alt text](act-1.png)
+
 - Total Asset Turnover: Net Revenue/Average Total Asset
 - Fixed Asset Turnover: Net Revenue/Average Fixed Asset
 - Working Capital Turnover: Net Revenue/Average Working Capital
