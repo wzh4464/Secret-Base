@@ -82,6 +82,8 @@ $$
 
 <span style="color:red">注意是账面价值</span>
 
+<span style="color:red">invested capital = long-term debt + equity</span>
+
 #### 投资标准
 
 - ROIC > Cost of Capital
