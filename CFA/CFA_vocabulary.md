@@ -44,3 +44,6 @@
 - DIO (days inventory outstanding): [n.] a financial ratio that indicates the average time (in days) that a company takes to turn its inventory into sales, 存货周转天数
 - Accrued expenses [n.] are expenses a company has incurred but has not yet paid, 应计费用
 - outlay [n.] an amount of money spent on something, 支出
+- arbitrageur [n.] buying and selling identical goods in different markets, providing liquidity to the market, 套利者
+- clearinghouse [n.] an intermediary between buyers and sellers of financial instruments, 清算所
+- custodian [n.] a person who has responsibility for taking care of or protecting something, 管理人
