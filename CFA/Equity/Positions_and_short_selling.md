@@ -45,4 +45,3 @@ Margin call 条件: 自有资金占比小于$MM$.
 - $P_0$: Initial price of the stock
 - $IM$: Initial margin requirement
 - $MM$: Maintenance margin requirement
-
