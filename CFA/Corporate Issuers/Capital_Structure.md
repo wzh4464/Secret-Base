@@ -35,6 +35,10 @@ $$
 3. $V_L = V_U + t D$
 4. $r_e = r_0 + \frac{D}{E} \times (r_0 - r_d) \times (1 - t)$
 
+$$
+V_L = V_U + t D - PV (financial distress costs)
+$$
+
 3 / 4 负债的成本会比权益的成本低
 
 ### reflection on MM model
