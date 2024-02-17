@@ -47,3 +47,4 @@
 - arbitrageur [n.] buying and selling identical goods in different markets, providing liquidity to the market, 套利者
 - clearinghouse [n.] an intermediary between buyers and sellers of financial instruments, 清算所
 - custodian [n.] a person who has responsibility for taking care of or protecting something, 管理人
+- collateral [n.] something pledged as security for repayment of a loan, 担保品
