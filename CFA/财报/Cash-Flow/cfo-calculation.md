@@ -1,11 +1,11 @@
-# Caluculation of CFO by Direct Method
+# Calculation of CFO by Direct Method
 
 ## Direct method
 
-| + Cash recieved from customers | net sales -(closing A/R - opening A/R) 括号内是赊销部分                |
+| + Cash received from customers | net sales -(closing A/R - opening A/R) 括号内是赊销部分                |
 | ------------------------------ | -------------------------------------------------------------- |
 | - Cash paid to suppliers       | COGS + increase in inventory - (closing A/P - opening A/P)     |
-| - Cash paid to exployees       | wage expense - (closing wage payables - opening wage payables) |
+| - Cash paid to employees       | wage expense - (closing wage payable - opening wage payable) |
 | - Cash paid to for interests   |                                                                |
 | - Cash paid for taxes          |                                                                |
 | CFO                            |                                                                |
@@ -24,7 +24,7 @@ E B A S
 
 - 非经营的现金：影响净利润但是不是operating activities经营活动 e.g. disposal of NCA non-current assets, 因为这部分现金流是CFI部分的
 
-- from Working Captital
+- from Working Capital
   
   - A/R
   
@@ -32,4 +32,4 @@ E B A S
   
   - A/P
   
-  - ... all kinds of current liablitiies? 
+  - ... all kinds of current liabilities?
