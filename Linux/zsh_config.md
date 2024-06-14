@@ -23,3 +23,11 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 # And then add them to "~/.zshrc" file
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 ```
+
+## powerlevel10k
+
+```bash
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+```
+
+And then add `ZSH_THEME="powerlevel10k/powerlevel10k"` to `~/.zshrc`.
