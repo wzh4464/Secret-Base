@@ -69,5 +69,36 @@
 [^dongkuanxu2019DeepCoClustering]: Dongkuan Xu, Wei Cheng, Bo Zong, Ni Jingchao, Jingchao Ni, Jingchao Ni, Song Dongjin, Song Dongjin, Dongjin Song, Wenchao Yu, Haifeng Chen, Yuncong Chen, Chen Haifeng, Chen Haifeng, Chen Haifeng, Chen Haifeng, Haifeng Chen, Haifeng Chen, Xiang Zhang, & Xiang Zhang. (2019). Deep Co-Clustering.
 [^junweihan2017BilateralKMeansAlgorithm]: Junwei Han, Kun Song, Feiping Nie, & Xuelong Li. (2017). Bilateral k-Means Algorithm for Fast Co-Clustering.
 [^NIPS2017_00a03ec6]: Nie, F., Wang, X., Deng, C., & Huang, H. (2017). Learning a structured optimal bipartite graph for co-clustering. In I. Guyon, U. V. Luxburg, S. Bengio, H. Wallach, R. Fergus, S. Vishwanathan, & R. Garnett (Eds.), Advances in neural information processing systems (Vol. 30). Curran Associates, Inc. <https://proceedings.neurips.cc/paper_files/paper/2017/file/00a03ec6533ca7f5c644d198d815329c-Paper.pdf>
-[^ding2006OrthogonalNonnegativeMatrix]: Ding, C., Li, T., Peng, W., & Park, H. (2006). Orthogonal nonnegative matrix t-factorizations for clustering. Proceedings of the 12th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, 126–135. https://doi.org/10.1145/1150402.1150420
-[^long2005CoclusteringBlockValue]: Long, B., Zhang, Z. (Mark), & Yu, P. S. (2005). Co-clustering by block value decomposition. Knowledge Discovery and Data Mining, 635–640. https://doi.org/10.1145/1081870.1081949
+[^ding2006OrthogonalNonnegativeMatrix]: Ding, C., Li, T., Peng, W., & Park, H. (2006). Orthogonal nonnegative matrix t-factorizations for clustering. Proceedings of the 12th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, 126–135. <https://doi.org/10.1145/1150402.1150420>
+[^long2005CoclusteringBlockValue]: Long, B., Zhang, Z. (Mark), & Yu, P. S. (2005). Co-clustering by block value decomposition. Knowledge Discovery and Data Mining, 635–640. <https://doi.org/10.1145/1081870.1081949>
+
+## Spectral clustering
+
+- 通过谱聚类的方法，将数据矩阵转换为一个二分图，最小化边权重来 partition.
+- Data matrix: $B \in \mathbb{R}^{n \times m}$, $n$ 为行数，$m$ 为列数.
+- $$ A = \begin{bmatrix} 0 & B \\ B^T & 0 \end{bmatrix} $$
+- $ N = n + m $, 是 $A$ 的维度.
+- $ D = \text{diag}(A \mathbf{1}) $, 是 $A$ 的度矩阵.
+- $ d_{ii} = \sum_{j=1}^{N} a_{ij} $
+- $ d_{ij} = \delta_{ij} a_{ik} \mathbf{1}_k $
+- $ L = D - A \in \mathbb{R}^{N \times N} $, 是拉普拉斯矩阵.
+- $ l_{ij} = \delta_{ij} a_{ik} \mathbf{1}_k - a_{ij} $ ($l_{jk} = \delta_{jk} a_{jl} \mathbf{1}_l - a_{jk}$)
+- $ Y \in \mathbb{R}^{N \times k} $, 是 $k$ 个特征向量组成的矩阵.
+- 取 $Y$ 的第 $j$ 列作为 $y_j$, $y_j^\top D y_j = \lambda_j$ 是 clustering $j$ 的 associate degree.
+- $ y_j^\top A y_j $ 是 clustering $j$ 内部的度.
+- $ y_j^\top L y_j = \lambda_j - y_j^\top A y_j $ 是 clustering $j$ 的度.
+- 优化目标是最小化 $ \sum_{j=1}^{k} \frac{y_j^\top L y_j}{y_j^\top D y_j} $.
+
+- $ Z = Y(Y^\top D Y)^{-\frac{1}{2}} $
+- $ D' = Y^\top D Y $
+- $ L' = Y^\top L Y $
+- $ Z = Y(D')^{-\frac{1}{2}} $
+
+$$
+\begin{equation}
+\begin{array}{ll}
+\mathrm{Tr} (Z^\top L Z) &= \mathrm{Tr}[(Y(D')^{-\frac{1}{2}})^\top L Y(D')^{-\frac{1}{2}}] \\
+&= \mathrm{Tr}(L' (D')^{-1}) \\
+\end{array}
+\end{equation}
+$$
