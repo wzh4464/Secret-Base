@@ -2,9 +2,9 @@
 
 ## Cocluster History
 
-1. 首次出现: 运用于基因表达数据的聚类算法，Cheng & Church (2000) [^cheng2000BiclusteringExpressionData], 使用方均 residuals 作为度量，找到所有 mannually selected 的 thereshold 以下的子矩阵.
+1. 首次出现: 运用于基因表达数据的聚类算法, Cheng & Church (2000) [^cheng2000BiclusteringExpressionData], 使用方均 residuals 作为度量, 找到所有 mannually selected 的 thereshold 以下的子矩阵.
 
-2. Spectral Co-clustering: 该算法使用了一种基于谱聚类的方法，SCC [^dhillon2001CoclusteringDocumentsWordsa]. 该算法 coclusters on word-document matrix, 使用了一个基于谱聚类的方法，它将数据矩阵转换为一个二分图, 最小化边权重来 partition.
+2. Spectral Co-clustering: 该算法使用了一种基于谱聚类的方法, SCC [^dhillon2001CoclusteringDocumentsWordsa]. 该算法 coclusters on word-document matrix, 使用了一个基于谱聚类的方法, 它将数据矩阵转换为一个二分图, 最小化边权重来 partition.
 
 于是有了三种：
 
@@ -30,7 +30,7 @@
 
 <!-- often clusters are embedded in subspaces comprised of a subset of features, and different features may be relevant for different clusters. Algorithms that operate globally in the feature space fail to discover such local patterns -->
 
-- 与传统聚类算法相比，coclustering 能够发现数据中的子空间，即子矩阵，这些子矩阵可能在不同的特征子集中嵌入，不同的特征可能对不同的聚类有意义。在特征空间中全局操作的算法无法发现这种局部模式。
+- 与传统聚类算法相比, coclustering 能够发现数据中的子空间, 即子矩阵, 这些子矩阵可能在不同的特征子集中嵌入, 不同的特征可能对不同的聚类有意义. 在特征空间中全局操作的算法无法发现这种局部模式.
 
 ## Evaluation Score
 
@@ -74,8 +74,8 @@
 
 ## Spectral clustering
 
-- 通过谱聚类的方法，将数据矩阵转换为一个二分图，最小化边权重来 partition.
-- Data matrix: $B \in \mathbb{R}^{n \times m}$, $n$ 为行数，$m$ 为列数.
+- 通过谱聚类的方法, 将数据矩阵转换为一个二分图, 最小化边权重来 partition.
+- Data matrix: $B \in \mathbb{R}^{n \times m}$, $n$ 为行数, $m$ 为列数.
 - $$ A = \begin{bmatrix} 0 & B \\ B^T & 0 \end{bmatrix} $$
 - $ N = n + m $, 是 $A$ 的维度.
 - $ D = \text{diag}(A \mathbf{1}) $, 是 $A$ 的度矩阵.
@@ -87,18 +87,98 @@
 - 取 $Y$ 的第 $j$ 列作为 $y_j$, $y_j^\top D y_j = \lambda_j$ 是 clustering $j$ 的 associate degree.
 - $ y_j^\top A y_j $ 是 clustering $j$ 内部的度.
 - $ y_j^\top L y_j = \lambda_j - y_j^\top A y_j $ 是 clustering $j$ 的度.
-- 优化目标是最小化 $ \sum_{j=1}^{k} \frac{y_j^\top L y_j}{y_j^\top D y_j} $.
 
-- $ Z = Y(Y^\top D Y)^{-\frac{1}{2}} $
-- $ D' = Y^\top D Y $
+### Theorem
+
+$$ \sum_{j=1}^{k} \frac{y_j^\top L y_j}{y_j^\top D y_j} = \mathrm{Tr} (Z^\top L Z) $$
+于是优化目标成为
+$$ \min_{Z^\top D Z = I} \mathrm{Tr} (Z^\top L Z) $$
+其中 $ Z = Y(Y^\top D Y)^{-\frac{1}{2}}. $
+
+如果记
+
+- $F = D^{-\frac{1}{2}} Z$,
+- $F^\top = [U^\top, V^\top]$,
+- $D = \text{diag}(D_u, D_v)$,
+
+则记 $ O = U^\top D_u^{\frac{1}{2}} B D_v^{\frac{1}{2}} V $
+优化目标成为
+$$
+\begin{equation}
+\max_{U^\top U + V^\top V = I} \mathrm{Tr} (O)
+\end{equation}
+$$
+
+### Proof
+
+- $ D' = Y^\top D Y $, 可以证明是对角矩阵, 对角元素是 $ \lambda_i $.
 - $ L' = Y^\top L Y $
 - $ Z = Y(D')^{-\frac{1}{2}} $
 
 $$
-\begin{equation}
 \begin{array}{ll}
 \mathrm{Tr} (Z^\top L Z) &= \mathrm{Tr}[(Y(D')^{-\frac{1}{2}})^\top L Y(D')^{-\frac{1}{2}}] \\
 &= \mathrm{Tr}(L' (D')^{-1}) \\
 \end{array}
+$$
+
+先算一下 $l'_{ii}$:
+
+$$
+\begin{array}{ll}
+l'_{ii} &= y_{ki} (l_{kj}) y_{kj} \\
+&= y_i^\top L y_i \\
+\end{array}
+$$
+
+由于 $ D' $ 是对角矩阵, 所以 $ (D')^{-1} $ 也是对角矩阵, 所以
+
+$$
+\begin{array}{ll}
+\mathrm{Tr} (Z^\top L Z) &= \sum_{i=1}^{N} \frac{l'_{ii}}{d'_{ii}} \\
+&= \sum_{i=1}^{N} \cfrac{y_i^\top L y_i}{y_i^\top D y_i}
+\end{array}
+$$
+
+检查一下 $Z^\top D Z = I$ 需要 $Y$ 满足什么条件. 其实就是 $Y^\top D Y$ 可以进行 $-\frac{1}{2}$ 次方操作. 也就是说 $Y^\top D Y$ 必须是正定矩阵. 这要求 $Y$ 是列满秩的, 也就是说没有两个线性相关的聚类.
+
+因为 $Y^\top D Y$ 正定等价于 $ \forall x \neq 0, x^\top Y^\top D Y x = (Yx)^\top D (Yx) > 0 $. 记 $ z = Yx $, 则 $ x^\top Y^\top D Y x = z^\top D z > 0 $, 所以只需 $x \neq 0$ 时有 $z \neq 0$ 即可.
+
+而
+
+$$ Z^\top L Z = I - O - O^\top $$
+$$ Z^\top D Z = U^\top U + V^\top V = I $$
+
+则直接计算有
+$$ \begin{equation}\max_{U^\top U + V^\top V = I} \mathrm{Tr} (O)\end{equation} $$
+
+### Lemma 连续情况的优化
+
+优化目标
+
+$$
+\max_{X^\top X + Y^\top Y = I} \mathrm{Tr} (X^\top M Y),
+$$
+
+其中 $M \in \mathbb{R}^{n_1 \times n_2}$, $X \in \mathbb{R}^{n_1 \times k}$, $Y \in \mathbb{R}^{n_2 \times k}$.
+
+那么其解为
+
+<!-- X = sqrt2/2 U1, Y = sqrt2/2 V1, 用一个左大括号画成一个方程组 -->
+$$
+\begin{equation}
+\begin{cases}
+X = \frac{\sqrt{2}}{2} U_1 \\
+Y = \frac{\sqrt{2}}{2} V_1
+\end{cases}
 \end{equation}
 $$
+其中, $U_1$ 和 $V_1$ 是 $M$ 前 $k$ 个最大的奇异值对应的左右奇异向量.
+
+### Proof
+
+拉格朗日函数 $\mathcal{L} = \mathrm{Tr} (X^\top M Y) - \mathrm{Tr} (\Lambda (X^\top X + Y^\top Y - I))$.
+
+$ \frac{\partial \mathcal{L}}{\partial X} = 0 $, 得到 $M Y = X \Lambda$.
+
+## References
