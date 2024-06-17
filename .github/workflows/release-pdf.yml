@@ -37,7 +37,7 @@ jobs:
         run: sudo apt-get install texlive-lang-chinese
 
       - name: Install fonts
-        run: sudo apt-get install texlive-fonts-recommended texlive-fonts-extra
+        run: sudo apt-get install texlive-fonts-recommended texlive-fonts-extra ttf-mscorefonts-installer
 
       - name: Convert Markdown to PDF with xelatex
         run: |
