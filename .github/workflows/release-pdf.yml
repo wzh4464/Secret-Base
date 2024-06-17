@@ -9,6 +9,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write  # 确保对内容有写权限
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
