@@ -24,8 +24,8 @@ jobs:
       - name: Install pandoc
         run: sudo apt-get install pandoc
 
-      - name: Install latex
-        run: sudo apt-get install texlive-latex-base
+      - name: Install latex with xelatex
+        run: sudo apt-get install texlive-base texlive-xetex
 
       - name: Add pdflatex to PATH
         run: echo "export PATH=$PATH:/usr/bin/pdflatex" >> $GITHUB_ENV
