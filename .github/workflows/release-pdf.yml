@@ -37,7 +37,8 @@ jobs:
         run: |
           mkdir pdfs
           for file in $(find . -name "*.md"); do
-            pandoc $file -o pdfs/$(basename $file .md).pdf --pdf-engine=xelatex --template=template/template.tex
+            # pandoc $file -o pdfs/$(basename $file .md).pdf --pdf-engine=xelatex --template=template/template.tex # address issue with blank in file name
+            pandoc "$file" -o "pdfs/$(basename "$file" .md).pdf" --pdf-engine=xelatex --template=template/template.tex
           done
 
       - name: Create Release
