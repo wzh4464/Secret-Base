@@ -4,6 +4,7 @@ documentclass: "ctexart"
 classoption: "UTF8"
 ---
 # Latexdiff with subfiles - TeX - LaTeX Stack Exchange --- 带有子文件的 Latexdiff - TeX - LaTeX 堆栈交换
+
 Latexdiff with subfiles 带有子文件的 Latexdiff
 Ask Question
 Is there a way to make latexdiff work with the 'subfiles' package ?
@@ -16,6 +17,7 @@ Example :
 ****dd
 例：
 main.tex
+
 ```latex
 \documentclass[10pt]{article}
 \usepackage{subfiles}
@@ -23,21 +25,27 @@ main.tex
 \subfile{includeme.tex}
 \end{document}
 ```
+
 includeme.tex 包括我.tex
+
 ```latex
 \documentclass[main.tex]{subfiles}
 \begin{document}
 Text!
 \end{document}
 ```
+
 Running
 运行
+
 ```latex
 latexdiff d1/main.tex d2/main.tex --flatten > mydiff.tex
 ```
+
 the resulting document simply does not include the contents of the subfile.
 生成的文档根本不包含子文件的内容。
 mydiff.tex
+
 ```latex
 \documentclass[10pt]{article}
 %DIF LATEXDIFF DIFFERENCE FILE
@@ -47,6 +55,7 @@ mydiff.tex
 \subfile{includeme.tex}
 \end{document}
 ```
+
 So yes, the problem lies with the flatten pipeline/workflow, which does not seem to be made to work with \\subfile{includeme.tex} includes.
 所以是的，问题出在扁平化的管道/工作流上，它似乎不适用于 `\subfile{includeme.tex}` 包含。
 You could try some of the `flatten` alternatives discussed here: [tex.stackexchange.com/questions/21838/…](http://tex.stackexchange.com/questions/21838/replace-inputfilex-by-the-content-of-filex-automatically "replace inputfilex by the content of filex automatically")
@@ -70,7 +79,9 @@ _For posterity:_ at least as of `latexdiff version 1.1.1`, using the `--flatten`
 – [DilithiumMatrix](https://tex.stackexchange.com/users/22806/dilithiummatrix "595 reputation")
 [Jun 1, 2017 at 12:58](#comment921132_167620)
 [Show **1** more comment](# "Expand to show all comments on this post")
+
 ## 3 Answers
+
 Sorted by:
 Highest score (default) Date modified (newest first) Date created (oldest first)
 8
@@ -86,7 +97,7 @@ The -p option forces latexdiff to omit the preamble commands that it normally in
 \-p 选项强制 latexdiff 省略它通常在找到 \\begin{document} 时自动插入的前导码命令（需要辅助文件“null”，因为由于 latexdiff 中的错误无法识别 -p/dev/null）。
 Now all that remains is to automate this. The following line is a hacky way to achieve some automation as proof-of-concept but would really need to be expanded into a more robust and flexible small shell script:
 现在剩下的就是自动化。以下行是实现一些自动化作为概念验证的黑客方法，但实际上需要扩展为更强大、更灵活的小 shell 脚本：
-`grep -v '^%' main.tex | grep subfile\{ | sed 's/^.*subfile{\(.*\)}.*$/\1/' \ | awk '{ print "latexdiff -pnull d1/" $1, "d2/" $1,">", $1 }' | sh`
+`grep -v '^%' main.tex | grep subfile\{ | sed 's/^.*subfile{\(.*\)}.*$/\1/' \ | awk '{ print "latexdiff -pnull d1/"$1, "d2/"$1,">",$1 }' | sh`
 I have noted the OP question as a feature request and eventually the --flatten option of latexdiff might be updated to deal with this 'natively'. The 'null' file workaround will probably not be necessary from version 1.0.4 onwards (not yet released at the time of writing)
 我已将 OP 问题作为功能请求，最终 latexdiff 的 --flatten 选项可能会更新以“原生”处理此问题。从 1.0.4 版开始（撰写本文时尚未发布）可能不需要“null”文件解决方法
 – [frederik](https://tex.stackexchange.com/users/38437/frederik "1,375 reputation")
@@ -103,6 +114,7 @@ Note that latexdiff version 1.0.4 is now released and --flatten supports \\subfi
 @frederik 如果子文件位于使用 `\def\input@path{{./tex/} {./} {../}}` .
 2 years after the question was asked, but I ended up writing a batch file for solving this in a windows environment:
 在提出这个问题 2 年后，但我最终编写了一个批处理文件来在 Windows 环境中解决这个问题：
+
 ```latex
 @echo off
 setlocal
@@ -117,8 +129,10 @@ latexdiff --flatten %old_path%flat.tex flat.tex > diff.tex
 rm flat.tex
 rm %old_path%flat.tex
 ```
+
 Post above [link](https://tex.stackexchange.com/a/346316/243072) was very helpful, but I made my modified version that you can use.
 上面的链接非常有帮助，但我制作了您可以使用的修改版本。
+
 ```latex
 @echo off
 setlocal

@@ -4,6 +4,7 @@ documentclass: "ctexart"
 classoption: "UTF8"
 ---
 # CUR Decomposition
+
 $$
 A \simeq C U R \\
 C = A(:,q) \\
@@ -17,5 +18,6 @@ A  \in \mathbb{R}^{m \times n} \\
 A = VSW^\top \\
 S \in \mathbb{R}^{k \times k} \\
 $$
-DEIM then is used to find $p$ and $q$ from $V$ and $W$.
+DEIM then is used to find$p$and$q$from$V$and$W$.
+
 ## $p$

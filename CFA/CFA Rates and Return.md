@@ -4,7 +4,9 @@ documentclass: "ctexart"
 classoption: "UTF8"
 ---
 # CFA Rates and Return
+
 ## INTEREST RATES, PRESENT VALUE, AND FUTURE VALUE
+
 1. interpret interest rates as required rates of return, discount rates, or opportunity costs
 解释利率为所需的回报率，折现率或机会成本
 1. interest rate = real risk-free rate + premium
@@ -16,8 +18,11 @@ classoption: "UTF8"
 不同的复利频率
 1. calculate and interpret the effective annual rate (EAR) and annual interest rate (APR)
 计算和解释有效年利率（EAR）和年利率（APR）
+
 ## Note
+
 ### Interest Rates
+
 - Real Risk-free rate: the time preferences of individuals for current versus future real consumption.
 不考虑通货膨胀的情况下的无风险利率, 通常是美国国债利率。代表个人对现在和未来消费的偏好
 - Inflation premium: The inflation premium compensates investors for the expected erosion of purchasing power of a bond’s future cash flows due to inflation.
@@ -34,23 +39,32 @@ governmental short-term debt (T-bills) is often used as a proxy for the nominal 
 美国T票的流动性溢价为零
 - Maturity risk premium: The maturity premium compensates investors for the increased sensitivity of the market value of debt to a change in market interest rates as maturity is extended, in general (holding all else equal). The difference between the interest rate on longer-maturity, liquid Treasury debt and that on short-term Treasury debt reflects a positive maturity premium for the longer-term debt (and possibly different inflation premiums as well).
 到期风险溢价：到期风险溢价补偿投资者对债务市场价值对市场利率变化的敏感性，因为到期日延长，一般来说（其他条件不变）。较长期限的流动性美国国债利率与短期美国国债利率之间的差异反映了较长期债务的正到期溢价（以及可能的不同通货膨胀溢价）。
+
 ### FUTURE VALUE OF A SINGLE CASH FLOW
+
 - Future value (FV)
 - Present value (PV)
 - Number of periods (n)
 - Stated annual interest rate 是年利率，不是实际利率
-lump sum (一次性支付): 仍然是 $FV = PV(1+r)^n$
+lump sum (一次性支付): 仍然是$FV = PV(1+r)^n$
 Pension fund: 养老金
+
 $$
 FV = PV(1+r)^n
 $$
+
 ### NON-ANNUAL COMPOUNDING (FUTURE VALUE)
+
 LO: calculate the solution for time value of money problems with different frequencies of compounding
+
 ### Annuity (年金)
+
 - Ordinary annuity (普通年金): payments occur at the end of each period
 - Annuity due (年金): payments occur at the beginning of each period
 - Perpetuity (永续年金): an annuity with an infinite life
+
 ### Mortgage (抵押贷款)
+
 - Down payment (首付)
 - We use the equation from annuity to calculate the monthly payment
 <!-- TODO: Need Review -->
@@ -75,9 +89,9 @@ $$
 $$
 R = \frac{P_1 - P_0 + I_1}{P_0}
 $$
-- $P_0$ is the initial price
-- $P_1$ is the final price
-- $I_1$ is the income received during the period
+-$P_0$is the initial price
+-$P_1$is the final price
+-$I_1$is the income received during the period
 ### Arithmetic or Mean Return
 $$
 \bar{R_i} = \frac{1}{n} \sum_{t=1}^n R_{it}
@@ -100,9 +114,9 @@ $$
 $$
 > Steps:
 >
-> 1. Suppose the return $r$ (see it as interest rate) is unknown.
-> 2. Calculate the present value of all cash flows using the unknown return $r$.
-> 3. Solve for $r$.
+> 1. Suppose the return$r$(see it as interest rate) is unknown.
+> 2. Calculate the present value of all cash flows using the unknown return$r$.
+> 3. Solve for$r$.
 #### Time-Weighted Rate of Return
 $$
 \prod_{t=1}^n (1 + r_t) = \frac{P_n}{P_0}
@@ -157,8 +171,8 @@ $$
 $$
 R_L = \frac{\text{Portfolio Return}}{\text{Investor's Equity}} = \frac{R_P(V_E + V_B)-V_B r_D}{V_E} = R_P + \frac{V_B}{V_E}(R_P - r_D)
 $$
-- $R_L$: leverage return
-- $R_P$: portfolio return 投资组合回报率
-- $V_E$: investor's equity 投资者的股权
-- $V_B$: borrowed funds 借来的资金
-- $r_D$: cost of borrowed funds 借来的资金的成本
+-$R_L$: leverage return
+-$R_P$: portfolio return 投资组合回报率
+-$V_E$: investor's equity 投资者的股权
+-$V_B$: borrowed funds 借来的资金
+-$r_D$: cost of borrowed funds 借来的资金的成本

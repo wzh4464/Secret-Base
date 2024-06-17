@@ -6,6 +6,7 @@ classoption: "UTF8"
 /*
 ![](https://raw.githubusercontent.com/zsviczian/obsidian-excalidraw-plugin/master/images/scripts-add-link-to-new-page-and-pen.jpg)
 Prompts for filename. Offers option to create and open a new Markdown or Excalidraw document. Adds link pointing to the new file, to the selected objects in the drawing. You can control in settings to open the file in the current active pane or an adjacent pane.
+
 ```javascript
 */
 if(!ea.verifyMinimumPluginVersion || !ea.verifyMinimumPluginVersion("1.6.1")) {
@@ -18,7 +19,7 @@ if(!settings["Open link in active pane"]) {
     "Open link in active pane": {
       value: false,
       description: "Open the link in the current active pane (on) or a new pane (off)."
-	},
+ },
     ...settings
   };
   ea.setScriptSettings(settings);
@@ -36,12 +37,12 @@ let fileType = "";
 const filename = await utils.inputPrompt (
   "Filename for new document",
   "",
-  `${prefix} - ${timestamp}`,
+  `${prefix} -${timestamp}`,
   [
     {
       caption: "Markdown",
       action: ()=>{fileType="md";return;}
-		},
+  },
     {
       caption: "Excalidraw",
       action: ()=>{fileType="ex";return;}
@@ -63,7 +64,7 @@ ea.style.strokeWidth = 2;
 ea.style.roughness = 0;
 if(elements.length===1 && elements[0].type !== "text") {
   ea.copyViewElementsToEAforEditing(elements);
-	ea.getElements()[0].link = link;
+ ea.getElements()[0].link = link;
 } else {
   const b = ea.getBoundingBox(elements);
   const id = ea.addEllipse(b.topX+b.width-5, b.topY, 5, 5);
@@ -74,7 +75,7 @@ if(elements.length===1 && elements[0].type !== "text") {
 await ea.addElementsToView(false,true,true);
 ea.selectElementsInView(ea.getElements());
 if(openInCurrentPane) {
-	app.workspace.openLinkText(file.path,ea.targetView.file.path,false);
+ app.workspace.openLinkText(file.path,ea.targetView.file.path,false);
   return;
 }
 ea.openFileInNewOrAdjacentLeaf(file);

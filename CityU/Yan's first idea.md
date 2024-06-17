@@ -4,13 +4,14 @@ documentclass: "ctexart"
 classoption: "UTF8"
 ---
 # Steps to find co-clusters in a compatibility matrix
-> Assume the compatibility matrix is $A_{ij}$.
 >
-> Step 1: Compute horizontal projection $P_i(i) = \sum_{j} A_{ij}$
+> Assume the compatibility matrix is$A_{ij}$.
 >
-> Step 2: Find $i_{max}$ for which $P_i(i_{max})$ is maximum among all i values
+> Step 1: Compute horizontal projection$P_i(i) = \sum_{j} A_{ij}$
 >
-> Step 3: Form $A_1(i, j) = |A_{ij} - A_{i_{max}j}|$
+> Step 2: Find$i_{max}$for which $P_i(i_{max})$is maximum among all i values
+>
+> Step 3: Form$A_1(i, j) = |A_{ij} - A_{i_{max}j}|$
 >
 > Step 4: Compute horizontal projection P_{1i}(i) = Sum_{all j} A1(i, j)
 >
