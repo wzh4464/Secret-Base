@@ -100,9 +100,7 @@ $$\min_{Z^\top D Z = I} \mathrm{Tr} (Z^\top L Z)$$
 优化目标成为
 
 $$
-\begin{equation}
 \max_{U^\top U + V^\top V = I} \mathrm{Tr} (O)
-\end{equation}
 $$
 
 ### Proof
@@ -137,7 +135,9 @@ $$
 $$Z^\top L Z = I - O - O^\top$$
 $$Z^\top D Z = U^\top U + V^\top V = I$$
 则直接计算有
-$$\begin{equation}\max_{U^\top U + V^\top V = I} \mathrm{Tr} (O)\end{equation}$$
+$$
+\max_{U^\top U + V^\top V = I} \mathrm{Tr} (O)
+$$
 
 ### Lemma 连续情况的优化
 
@@ -148,12 +148,10 @@ $$
 其中$M \in \mathbb{R}^{n_1 \times n_2}$,$X \in \mathbb{R}^{n_1 \times k}$,$Y \in \mathbb{R}^{n_2 \times k}$.
 那么其解为
 $$
-\begin{equation}
 \begin{cases}
 X = \frac{\sqrt{2}}{2} U_1 \\
 Y = \frac{\sqrt{2}}{2} V_1
 \end{cases}
-\end{equation}
 $$
 其中,$U_1$和$V_1$是$M$前$k$个最大的奇异值对应的左右奇异向量.
 > Proof:
