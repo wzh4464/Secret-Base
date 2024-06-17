@@ -1,3 +1,8 @@
+---
+toc: true
+documentclass: "ctexart"
+classoption: "UTF8"
+---
 # Capital Structure
 
 ## 周期
@@ -32,13 +37,12 @@ $$
 r_e E + r_d D = r_0 (E + D)
 $$
 
-3. $V_L = V_U + t D$
-4. $r_e = r_0 + \frac{D}{E} \times (r_0 - r_d) \times (1 - t)$
+3.$V_L = V_U + t D$
+4.$r_e = r_0 + \frac{D}{E} \times (r_0 - r_d) \times (1 - t)$
 
 $$
 V_L = V_U + t D - PV (financial distress costs)
 $$
-
 3 / 4 负债的成本会比权益的成本低
 
 ### reflection on MM model
@@ -47,7 +51,7 @@ $$
   - bankruptcy cost
 - Indirect cost
   - agency cost
-  
+
 ## Optimal Capital Structure
 
 $$
@@ -56,7 +60,7 @@ $$
 
 ### Target Capital Structure
 
-达到最优的资本结构时 ($V_L$ 最大)
+达到最优的资本结构时 ($V_L$最大)
 
 ### Methods to estimate the target capital structure
 

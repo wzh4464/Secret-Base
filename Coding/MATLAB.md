@@ -1,5 +1,9 @@
+---
+toc: true
+documentclass: "ctexart"
+classoption: "UTF8"
+---
 # install matlab on centos
-
 - download according to **network access/client computer**:
 	- For example, first download it to your mac
 - log in, agree to the acknowledgment, and click on `Advance Option` on the right above, then choose `Download only`

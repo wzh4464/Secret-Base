@@ -1,3 +1,8 @@
+---
+toc: true
+documentclass: "ctexart"
+classoption: "UTF8"
+---
 # 如何在远程服务器上布置 Overleaf 并通过子域名访问
 
 本文档将介绍如何在远程服务器上布置 Overleaf，并通过子域名访问该服务。主要步骤包括服务器配置、端口映射、域名解析和 HTTPS 配置。
@@ -42,7 +47,6 @@ vhost_http_port = 8081
 ```
 
 在 Azure 服务器的网络规则界面打开端口 7000 和 8081。
-
 启动 FRP 服务端：
 
 ```bash
@@ -57,7 +61,6 @@ vhost_http_port = 8081
 [common]
 server_addr = <Azure_Public_IP>
 server_port = 7000
-
 [overleaf]
 type = http
 local_ip = 127.0.0.1
@@ -105,13 +108,11 @@ sudo a2enmod proxy proxy_http proxy_wstunnel rewrite headers
 ```apache
 <VirtualHost *:8081>
     ServerName overleaf.zihanng.shop
-
     ProxyPreserveHost On
     ProxyPass / http://127.0.0.1:80/
     ProxyPassReverse / http://127.0.0.1:80/
-
-    ErrorLog ${APACHE_LOG_DIR}/overleaf_error.log
-    CustomLog ${APACHE_LOG_DIR}/overleaf_access.log combined
+    ErrorLog${APACHE_LOG_DIR}/overleaf_error.log
+    CustomLog${APACHE_LOG_DIR}/overleaf_access.log combined
 </VirtualHost>
 ```
 

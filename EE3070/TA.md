@@ -1,6 +1,9 @@
-
+---
+toc: true
+documentclass: "ctexart"
+classoption: "UTF8"
+---
 # TA
-
 - Theme: IoT in CityU
 - 14th Sep: week 2
 - week 3 - wee 13 lab period

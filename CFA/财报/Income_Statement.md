@@ -1,3 +1,8 @@
+---
+toc: true
+documentclass: "ctexart"
+classoption: "UTF8"
+---
 # Income Statement
 
 - [Income Statement](#income-statement)
@@ -48,17 +53,16 @@ SCI = IS + OCI
 > - By function: (the cost of sales method)
 >   - Production: included in COGS
 >   - Administration: included in Period Cost
-
+>
 ## Gain/Loss
 
 - Gain/Loss on sale of PPE(PPE: Property, Plant and Equipment, 不动产、厂房设备等)
 
 > Remark: PBIT includes non-recurring gains and losses, while operating income does not.
-
+>
 ## Net Income
-
-<!-- - $Net\ Income = (Revenue - ordinary\ expenses) + (Gains - Losses) + (other\ income - other\ expenses)$ -->
-- $ \text{Net Income} = \text{Revenue} - \text{ordinary expenses} + \text{Gains} - \text{Losses} + \text{other income} - \text{other expenses} $
+<!-- -$Net\ Income = (Revenue - ordinary\ expenses) + (Gains - Losses) + (other\ income - other\ expenses)$-->
+-$\text{Net Income} = \text{Revenue} - \text{ordinary expenses} + \text{Gains} - \text{Losses} + \text{other income} - \text{other expenses}$
 
 > Multiple-step income statement vs single-step income statement
 >
@@ -70,7 +74,7 @@ SCI = IS + OCI
 >   - 一步到位，直接算出 Net Income
 >   - 适用于简单的公司
 >   - 没有 Gross Profit, Operating Income 等概念
-
+>
 ## The Line
 
 Net Income from Continuing Operations

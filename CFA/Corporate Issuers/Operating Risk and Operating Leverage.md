@@ -1,3 +1,8 @@
+---
+toc: true
+documentclass: "ctexart"
+classoption: "UTF8"
+---
 # Operating Risk and Operating Leverage
 
 ## Operating Risk
@@ -14,7 +19,6 @@ DOL (Degree of Operating Leverage)
 $$
 DOL = \frac{\% \Delta EBIT}{\% \Delta Sales}
 $$
-
 单位销量的变化导致Operating Income的变化
 
 ### 计算式
@@ -22,9 +26,8 @@ $$
 $$
 DOL = \frac{Q(P - V)}{Q(P - V) - F} = \frac{sale - \text{TVC}}{sale - \text{TVC} - F}
 $$
-
-- $Q$: quantity
-- $P$: price per unit
-- $V$: variable cost per unit
-- $F$: fixed cost
-- $\text{TVC}$: total variable cost
+-$Q$: quantity
+-$P$: price per unit
+-$V$: variable cost per unit
+-$F$: fixed cost
+-$\text{TVC}$: total variable cost

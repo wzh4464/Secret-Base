@@ -1,4 +1,8 @@
 ---
+toc: true
+documentclass: "ctexart"
+classoption: "UTF8"
+
 zotero-key: CS3JLTE4
 zt-attachments:
   - "5521"

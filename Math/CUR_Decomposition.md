@@ -1,3 +1,8 @@
+---
+toc: true
+documentclass: "ctexart"
+classoption: "UTF8"
+---
 # CUR Decomposition
 
 $$
@@ -8,13 +13,11 @@ U = C^\dagger A R^\dagger \\
 p \text{ is a subset of } \{1, \dots, m\} \\
 q \text{ is a subset of } \{1, \dots, n\} \\
 $$
-
 $$
 A  \in \mathbb{R}^{m \times n} \\
 A = VSW^\top \\
 S \in \mathbb{R}^{k \times k} \\
 $$
-
-DEIM then is used to find $p$ and $q$ from $V$ and $W$.
+DEIM then is used to find$p$and$q$from$V$and$W$.
 
 ## $p$

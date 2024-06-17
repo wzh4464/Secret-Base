@@ -1,3 +1,8 @@
+---
+toc: true
+documentclass: "ctexart"
+classoption: "UTF8"
+---
 # CFA Rates and Return
 
 ## INTEREST RATES, PRESENT VALUE, AND FUTURE VALUE
@@ -41,8 +46,7 @@ governmental short-term debt (T-bills) is often used as a proxy for the nominal 
 - Present value (PV)
 - Number of periods (n)
 - Stated annual interest rate 是年利率，不是实际利率
-
-lump sum (一次性支付): 仍然是 $FV = PV(1+r)^n$
+lump sum (一次性支付): 仍然是$FV = PV(1+r)^n$
 Pension fund: 养老金
 
 $$
@@ -63,115 +67,77 @@ LO: calculate the solution for time value of money problems with different frequ
 
 - Down payment (首付)
 - We use the equation from annuity to calculate the monthly payment
-
 <!-- TODO: Need Review -->
-
 <div style="border: 1px solid red; padding: 10px;">
-
 e.g. 30-year mortgage, 8% interest rate, \$100,000 loan, monthly payment = \$733.76
 $$
-\begin{align*}
+\begin{aligned}
 FV &= 100,000 * (1+0.08/12)^{30*12} \\
 &=  1.903 * 10^6 \\
 A &= FV / \left(\frac{(1+0.08/12)^{30*12}-1}{0.08/12}\right) \\
 &= 733.7646
-\end{align*}
+\end{aligned}
 $$
 </div>
-
 ### Compound Continuous
-
 连续复利
-
 $$
 FV = PV e^{r n}
 $$
-
 ## Return
-
 ### Holding Period Return (HPR)
-
 $$
 R = \frac{P_1 - P_0 + I_1}{P_0}
 $$
-
-- $P_0$ is the initial price
-- $P_1$ is the final price
-- $I_1$ is the income received during the period
-
+-$P_0$is the initial price
+-$P_1$is the final price
+-$I_1$is the income received during the period
 ### Arithmetic or Mean Return
-
 $$
 \bar{R_i} = \frac{1}{n} \sum_{t=1}^n R_{it}
 $$
-
 ### Geometric Mean Return
-
 $$
 \bar{R_i} = \sqrt[n]{\prod_{t=1}^n (1 + R_{it})} - 1
 $$
-
 A geometric mean return provides a more accurate representation of the growth in portfolio value over a given time period than the arithmetic mean return.
-
 ### The Harmomic Mean
-
 Used in cost averaging (The periodic investment of a fixed amount of money.)
-
 ### Trimmed Mean
-
 A trimmed mean is the mean calculated after removing a certain percentage of the highest and lowest values.
-
 ### Winsorized Mean
-
 A winsorized mean is the mean calculated after replacing a certain percentage of the highest and lowest values with the highest and lowest values.
-
 ## Money-Weighted and Time-Weighted Rate of Return
-
 ### Money-Weighted Rate of Return
-
 $$
 \sum_{t=1}^n \frac{CF_t}{(1 + r)^t} = 0
 $$
-
 > Steps:
 >
-> 1. Suppose the return $r$ (see it as interest rate) is unknown.
-> 2. Calculate the present value of all cash flows using the unknown return $r$.
-> 3. Solve for $r$.
-
+> 1. Suppose the return$r$(see it as interest rate) is unknown.
+> 2. Calculate the present value of all cash flows using the unknown return$r$.
+> 3. Solve for$r$.
 #### Time-Weighted Rate of Return
-
 $$
 \prod_{t=1}^n (1 + r_t) = \frac{P_n}{P_0}
 $$
-
 > Steps:
 >
 > 1. Everytime there is a cash flow, normalize the portfolio value to the previous period.
 > 2. Calculate the geometric mean return. (Compound return)
-
 #### Money-Weighted vs. Time-Weighted
-
 <span style="color:red;">Money-weighted rate reveals the ability of the investor. Time-weighted rate reveals the market performance.</span>
-
 ## CFA OTHER MAJOR RETURN MEASURES AND THEIR APPLICATIONS
-
 <!-- tag cfa -->
-
 ### Learning Outcome
-
 计算并解释其他主要回报率的含义和应用。
-
 - Fee (gross / net return)
 - taxes (pre-tax / after-tax return)
 - inflation (nominal / real return)
 - leverage (杠杆)
 - management fee (管理费)
-
 ### Gross and Net Return
-
 #### Gross Return
-
 - 不扣除:
   - management fees (管理费)
   - custodian fees (托管费)
@@ -182,44 +148,31 @@ $$
   - trading expenses (交易费用)
     - Commissions (佣金)
   - 交易费用直接贡献于管理者所赚取的收益
-
 因此, **毛收益是评估和比较资产管理者投资技能的适当指标，因为它不包括任何与投资的管理和行政相关的费用.**
-
 #### Net Return
-
 - Deduct everything
-
 ### Pre-tax and After-tax Return
-
 - 除非明确说明, 否则回报率都是税前的
 - selecting appropriate securities (选择合适的证券)
 - reducing trading turnover (降低交易频率)
 -
-
 ### Real and Nominal Return
-
 $$
 (1 + r_{\text{nominal risk-free}}) = (1 + r_{\text{real risk-free}}) \times (1 + \text{inflation premium})
 $$
-
 $$
 (1 + \text{return}_{\text{real}}) = \frac{1 + r_{\text{nominal risk-free}}(1 + \text{risk premium})}{1 + \text{inflation premium}}
 $$
-
 From example:
-
 $$
 \frac{1 + \text{after taxed net return}}{1 + \text{inflation}} - 1 = \text{after taxed real return}
 $$
-
 ### Leverage return
-
 $$
 R_L = \frac{\text{Portfolio Return}}{\text{Investor's Equity}} = \frac{R_P(V_E + V_B)-V_B r_D}{V_E} = R_P + \frac{V_B}{V_E}(R_P - r_D)
 $$
-
-- $R_L$: leverage return
-- $R_P$: portfolio return 投资组合回报率
-- $V_E$: investor's equity 投资者的股权
-- $V_B$: borrowed funds 借来的资金
-- $r_D$: cost of borrowed funds 借来的资金的成本
+-$R_L$: leverage return
+-$R_P$: portfolio return 投资组合回报率
+-$V_E$: investor's equity 投资者的股权
+-$V_B$: borrowed funds 借来的资金
+-$r_D$: cost of borrowed funds 借来的资金的成本

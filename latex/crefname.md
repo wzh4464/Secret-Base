@@ -1,3 +1,8 @@
+---
+toc: true
+documentclass: "ctexart"
+classoption: "UTF8"
+---
 # LaTeX 自定义 Lemma 引用及计数器使用指南
 
 在 LaTeX 中，如果希望引用 `lemma` 环境并且使用计数器，同时确保在引用时显示为“Lemma”而不是“Theorem”，可以按照以下步骤操作：
@@ -22,20 +27,15 @@
 ```latex
 % 先加载 hyperref
 \usepackage{hyperref}
-
 % 然后加载 cleveref 包
 \usepackage{cleveref}
-
 % 自定义引用名称
 \crefname{theorem}{Theorem}{Theorems}
 \Crefname{theorem}{Theorem}{Theorems}
-
 \crefname{lemma}{Lemma}{Lemmas}
 \Crefname{lemma}{Lemma}{Lemmas}
-
 \crefname{definition}{Definition}{Definitions}
 \Crefname{definition}{Definition}{Definitions}
-
 \crefname{assumption}{Assumption}{Assumptions}
 \Crefname{assumption}{Assumption}{Assumptions}
 ```
@@ -55,15 +55,12 @@
 
 ```latex
 \usepackage{aliascnt}
-
 % 定理环境的定义
 \newtheorem{theorem}{Theorem}
-
 % 通过 aliascnt 包创建新的 lemma 环境，并继承 theorem 的计数器
 \newaliascnt{lemma}{theorem}
 \newtheorem{lemma}[lemma]{Lemma}
 \aliascntresetthe{lemma}
-
 % 定义 cleveref 的引用名称
 \crefname{theorem}{Theorem}{Theorems}
 \Crefname{theorem}{Theorem}{Theorems}
@@ -77,7 +74,6 @@
 
 ```latex
 \documentclass{article}
-
 % 其他需要的包
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -85,37 +81,29 @@
 \usepackage{hyperref}
 \usepackage{cleveref}
 \usepackage{aliascnt}
-
 % 定理环境的定义
 \newtheorem{theorem}{Theorem}
-
 % 通过 aliascnt 包创建新的 lemma 环境，并继承 theorem 的计数器
 \newaliascnt{lemma}{theorem}
 \newtheorem{lemma}[lemma]{Lemma}
 \aliascntresetthe{lemma}
-
 % 定义 cleveref 的引用名称
 \crefname{theorem}{Theorem}{Theorems}
 \Crefname{theorem}{Theorem}{Theorems}
 \crefname{lemma}{Lemma}{Lemmas}
 \Crefname{lemma}{Lemma}{Lemmas}
-
 % 自定义 Lemma 引用命令
 \newcommand{\lemmaref}[1]{Lemma~\ref{#1}}
-
 \begin{document}
-
 \begin{lemma}[Joint Probability of Co-cluster Size]
   \label{lem:joint_probability}
-  Let $C_k$ be a co-cluster and $B_{(i,j)}$ be a block in the partitioned matrix. The probability that the size of the co-cluster $C_k$ within block $B_{(i,j)}$ is less than $T_m$ rows and $T_n$ columns is given by:
-  \begin{align*}
+  Let$C_k$be a co-cluster and$B_{(i,j)}$be a block in the partitioned matrix. The probability that the size of the co-cluster$C_k$within block$B_{(i,j)}$is less than$T_m$rows and$T_n$columns is given by:
+  \begin{aligned}
     P(M_{(i,j)}^{(k)} < T_m, N_{(i,j)}^{(k)} < T_n) & \le \exp[-2 (s_i^{(k)})^2 \phi_i -2 (t_j^{(k)})^2 \psi_j]
-  \end{align*}
-  where $s_i^{(k)} = \cfrac{M^{(k)}}{M}-\cfrac{T_m-1}{\phi_i}$ and $t_j^{(k)} = \cfrac{N^{(k)}}{N}-\cfrac{T_n-1}{\psi_j}$.
+  \end{aligned}
+  where$s_i^{(k)} = \cfrac{M^{(k)}}{M}-\cfrac{T_m-1}{\phi_i}$and$t_j^{(k)} = \cfrac{N^{(k)}}{N}-\cfrac{T_n-1}{\psi_j}$.
 \end{lemma}
-
-In the scenario where the matrix $A$ is partitioned into $m \times n$ blocks, each block has size $\phi_i \times $\psi_j$, that is, $M=\sum_{i=1}^m \phi_i$ and $N=\sum_{j=1}^n \psi_j$, the joint probability of $M_{(i,j)}^{(k)}$ and $N_{(i,j)}^{(k)}$ is given by \lemmaref{lem:joint_probability}.
-
+In the scenario where the matrix$A$is partitioned into$m \times n$blocks, each block has size$\phi_i \times$\psi_j$, that is,$M=\sum_{i=1}^m \phi_i$and$N=\sum_{j=1}^n \psi_j$, the joint probability of$M_{(i,j)}^{(k)}$and$N_{(i,j)}^{(k)}$is given by \lemmaref{lem:joint_probability}.
 \end{document}
 ```
 
