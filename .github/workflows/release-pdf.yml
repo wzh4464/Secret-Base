@@ -33,11 +33,11 @@ jobs:
       - name: Install additional latex packages
         run: sudo apt-get install texlive-latex-extra
 
-      - name: Convert Markdown to PDF
+      - name: Convert Markdown to PDF with xelatex
         run: |
           mkdir pdfs
           for file in $(find . -name "*.md"); do
-            pandoc "$file" -o "pdfs/$(basename "$file" .md).pdf"
+            pandoc $file -o pdfs/$(basename $file .md).pdf --pdf-engine=xelatex
           done
 
       - name: Create Release
