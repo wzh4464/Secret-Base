@@ -66,3 +66,20 @@ S_t &= \det(D_0 + t A D_0) \\
 &=S_{0} + t S_{0} \text{tr}(A) + O(t^2)
 \end{align}
 $$
+
+## 对trace求导
+
+$$
+\frac{\mathrm{d} \mathbf{tr}(AB)}{\mathrm{d}B} = A^T
+$$
+
+<!-- Note box -->
+> **Note:** 证明：
+> $$
+> \begin{align}
+> \frac{\mathrm{d} \mathbf{tr}(AB)}{\mathrm{d}B} &= \frac{\mathrm{d} a_{ij} b_{ji}}{\mathrm{d}b_{kl}} \\
+> &= a_{ij} \delta_{il} \delta_{jk} \\
+> &= a_{lk} \\
+> &= A^T
+> \end{align}
+> $$
