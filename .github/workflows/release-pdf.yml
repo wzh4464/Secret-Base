@@ -37,7 +37,7 @@ jobs:
         run: |
           mkdir pdfs
           for file in $(find . -name "*.md"); do
-            pandoc $file -o pdfs/$(basename $file .md).pdf --pdf-engine=xelatex
+            pandoc $file -o pdfs/$(basename $file .md).pdf --pdf-engine=xelatex --template=template/template.tex
           done
 
       - name: Create Release
