@@ -3,7 +3,7 @@ name: Convert Markdown to PDF and Release
 on:
   push:
     branches:
-      - main
+      - release-pdf
 
 jobs:
   build:
