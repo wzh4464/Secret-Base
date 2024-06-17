@@ -30,6 +30,9 @@ jobs:
       - name: Add pdflatex to PATH
         run: echo "export PATH=$PATH:/usr/bin/pdflatex" >> $GITHUB_ENV
 
+      - name: Install additional latex packages
+        run: sudo apt-get install texlive-latex-extra
+
       - name: Convert Markdown to PDF
         run: |
           mkdir pdfs
