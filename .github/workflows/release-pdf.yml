@@ -43,7 +43,8 @@ jobs:
         run: |
               mkdir -p pdfs
               find . -path "./Excalidraw" -prune -o -name "*.md" -print | while IFS= read -r file; do
-                pandoc "$file" --resource-path=$(dirname $file) -o "pdfs/$(basename "$file" .md).pdf" --pdf-engine=xelatex --template=template/my_template.latex
+                echo "Converting $file to PDF..."
+                pandoc "$file" --resource-path=$(dirname $file) -o "pdfs/$(basename "$file" .md).pdf" --pdf-engine=xelatex --template=$PWD/template/my_template.latex
               done
 
       - name: Create Release
