@@ -25,22 +25,19 @@ jobs:
         run: npm install
 
       - name: Install pandoc
-        run: sudo apt-get install pandoc
+        run: sudo apt-get install -y pandoc
 
       - name: Install latex with xelatex
-        run: sudo apt-get install texlive-base texlive-xetex
-
-      - name: Add pdflatex to PATH
-        run: echo "export PATH=$PATH:/usr/bin/pdflatex" >> $GITHUB_ENV
+        run: sudo apt-get install -y texlive-base texlive-xetex
 
       - name: Install additional latex packages
-        run: sudo apt-get install texlive-latex-extra
+        run: sudo apt-get install -y texlive-latex-extra
 
       - name: Install ctex
-        run: sudo apt-get install texlive-lang-chinese
+        run: sudo apt-get install -y texlive-lang-chinese
 
       - name: Install fonts
-        run: sudo apt-get install texlive-fonts-recommended texlive-fonts-extra ttf-mscorefonts-installer
+        run: sudo apt-get install -y texlive-fonts-recommended texlive-fonts-extra ttf-mscorefonts-installer
 
       - name: Convert Markdown to PDF with xelatex
         run: |
@@ -55,15 +52,19 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: v1.0.1
-          release_name: Release v1.0.1
+          tag_name: v1.0.2
+          release_name: Release v1.0.2
           body: |
             This is the release description.
           draft: false
           prerelease: false
 
-      - name: Upload PDFs
-        uses: actions/upload-artifact@v2
+      - name: Upload PDFs to Release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          name: pdfs
-          path: pdfs
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: pdfs
+          asset_name: pdfs.zip
+          asset_content_type: application/zip
