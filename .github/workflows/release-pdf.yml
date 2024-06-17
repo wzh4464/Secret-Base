@@ -47,14 +47,20 @@ jobs:
                 pandoc "$file" --resource-path=$(dirname $file):$(dirname $file)/assets -o "pdfs/$(basename "$file" .md).pdf" --pdf-engine=xelatex --template=$PWD/template/my_template.latex
               done
 
+      - name: List PDFs
+        run: ls -l pdfs
+
+      - name: Zip PDFs
+        run: zip -r pdfs.zip pdfs
+
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: v1.0.2
-          release_name: Release v1.0.2
+          tag_name: v1.0.4
+          release_name: Release v1.0.4
           body: |
             This is the release description.
           draft: false
@@ -66,6 +72,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: pdfs
+          asset_path: pdfs.zip
           asset_name: pdfs.zip
           asset_content_type: application/zip
