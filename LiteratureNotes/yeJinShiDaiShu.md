@@ -2,8 +2,7 @@
 toc: true
 documentclass: "ctexart"
 classoption: "UTF8"
----
----
+
 zotero-key: 4PDZTW9K
 zt-attachments:
 - "1411"
@@ -11,6 +10,7 @@ title: 近世代数
 citekey: yeJinShiDaiShu
 ---
 # 近世代数
+
 [Zotero](zotero://select/library/items/4PDZTW9K) [attachment](<file:///Users/zihanwu/Zotero/storage/H29JBLAZ/KnowledgeMathAlgebra_%E5%8F%B6_%E6%AC%A7%E9%98%B3_%E8%BF%91%E4%B8%96%E4%BB%A3%E6%95%B0.pdf>)
 > [!note] Page 48
 >
