@@ -36,6 +36,9 @@ jobs:
       - name: Install ctex
         run: sudo apt-get install texlive-lang-chinese
 
+      - name: Install fonts
+        run: sudo apt-get install texlive-fonts-recommended texlive-fonts-extra
+
       - name: Convert Markdown to PDF with xelatex
         run: |
           mkdir pdfs
