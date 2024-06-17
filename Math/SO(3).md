@@ -41,12 +41,12 @@ $$
 <summary>whose norm is 1</summary>
 
 $$
-\begin{align}
+\begin{aligned}
 q \bar{q} &= (\cos \frac{\theta}{2} + \sin \frac{\theta}{2} \mathbf{u})(\cos \frac{\theta}{2} - \sin \frac{\theta}{2} \mathbf{u}) \\
 &= \cos^2 \frac{\theta}{2} - \sin^2 \frac{\theta}{2} \mathbf{u}^2 \\
 &= \cos^2 \frac{\theta}{2} + \sin^2 \frac{\theta}{2} \mathbf{u} \cdot \mathbf{u} \\
 &= 1
-\end{align}
+\end{aligned}
 $$
 
 </details>
@@ -54,20 +54,20 @@ $$
 where $\mathbf{u}$ is a unit vector.
 
 $$
-\begin{align}
+\begin{aligned}
 q^{-1} &= \bar{q}/|q|^2 \\
 &= \cos \frac{\theta}{2} - \sin \frac{\theta}{2} \mathbf{u} \\
 &= \bar{q}
-\end{align}
+\end{aligned}
 $$
 
 ### Rotation by conjugation
 
 $$
-\begin{align*}
+\begin{aligned*}
 t: \mathbb{R}^3 &\to \mathbb{R}^3 \\
 u &\mapsto v=t^{-1} u t
-\end{align*}
+\end{aligned*}
 $$
 
 where $t \in \mathbb{S}^3 \subset \mathbb{H}$.
@@ -75,10 +75,10 @@ where $t \in \mathbb{S}^3 \subset \mathbb{H}$.
 Thus a coresponding is induced
 
 $$
-\begin{align*}
+\begin{aligned*}
 T: \mathbb{S}^3 &\to \mathrm{SO}(3) \\
 t &\mapsto T_t(\cdot ) = t^{-1} (\cdot) t
-\end{align*}
+\end{aligned*}
 $$
 
 where $T(t)$ is a rotation matrix.
@@ -86,10 +86,10 @@ where $T(t)$ is a rotation matrix.
 Notice that $T_t = T_{-t}$, and
 
 $$
-\begin{align*}
+\begin{aligned*}
 T: \mathbb{S}^3 \ \mathrm{mod} \ \{\pm 1\} &\to \mathrm{SO}(3) \\
 \{\pm t\} &\mapsto T_t(\cdot ) = t^{-1} (\cdot) t
-\end{align*}
+\end{aligned*}
 $$
 
 is a isomorphism.

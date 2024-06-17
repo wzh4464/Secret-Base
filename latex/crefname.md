@@ -108,9 +108,9 @@
 \begin{lemma}[Joint Probability of Co-cluster Size]
   \label{lem:joint_probability}
   Let $C_k$ be a co-cluster and $B_{(i,j)}$ be a block in the partitioned matrix. The probability that the size of the co-cluster $C_k$ within block $B_{(i,j)}$ is less than $T_m$ rows and $T_n$ columns is given by:
-  \begin{align*}
+  \begin{aligned*}
     P(M_{(i,j)}^{(k)} < T_m, N_{(i,j)}^{(k)} < T_n) & \le \exp[-2 (s_i^{(k)})^2 \phi_i -2 (t_j^{(k)})^2 \psi_j]
-  \end{align*}
+  \end{aligned*}
   where $s_i^{(k)} = \cfrac{M^{(k)}}{M}-\cfrac{T_m-1}{\phi_i}$ and $t_j^{(k)} = \cfrac{N^{(k)}}{N}-\cfrac{T_n-1}{\psi_j}$.
 \end{lemma}
 

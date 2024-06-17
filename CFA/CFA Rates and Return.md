@@ -70,12 +70,12 @@ LO: calculate the solution for time value of money problems with different frequ
 
 e.g. 30-year mortgage, 8% interest rate, \$100,000 loan, monthly payment = \$733.76
 $$
-\begin{align*}
+\begin{aligned*}
 FV &= 100,000 * (1+0.08/12)^{30*12} \\
 &=  1.903 * 10^6 \\
 A &= FV / \left(\frac{(1+0.08/12)^{30*12}-1}{0.08/12}\right) \\
 &= 733.7646
-\end{align*}
+\end{aligned*}
 $$
 </div>
 

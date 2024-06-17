@@ -11,11 +11,11 @@ Note $b = \sum_{i\in \Omega} |x_i|$, then
 Consider
 
 $$
-\begin{align}
+\begin{aligned}
 f: \omega &\mapsto \sum_{i\in \omega} x_i \\
 g: \omega &\mapsto \sum_{i\in \omega} |x_i| \\
 \{\Omega' \setminus \Omega &| \Omega \subset \Omega' \subset X\} \to \mathbb{R} \\
-\end{align}
+\end{aligned}
 $$
 
 And since ${x_i}$ is given, $X \setminus \Omega$ can be divided into two subsets $X_1$ and $X_2$ such that $x_i \ge 0$ for $i \in X_1$ and $x_i < 0$ for $i \in X_2$.
@@ -23,10 +23,10 @@ And since ${x_i}$ is given, $X \setminus \Omega$ can be divided into two subsets
 Then define
 
 $$
-\begin{align}
+\begin{aligned}
 f_+: \omega &\mapsto \sum_{i\in \omega \cap X_1} x_i \\
 f_-: \omega &\mapsto \sum_{i\in \omega \cap X_2} |x_i| \\
-\end{align}
+\end{aligned}
 $$
 
 Then $f = f_+ - f_-$ and $g = f_+ + f_-$.
@@ -34,9 +34,9 @@ Then $f = f_+ - f_-$ and $g = f_+ + f_-$.
 Then one can prove $\sup(2f) \ge \sup(g)$. And then verify
 
 $$
-\begin{align}
+\begin{aligned}
 |b - \sup(g)| < 2\epsilon
-\end{align}
+\end{aligned}
 $$
 
 Notice: the $b$ part is wrong, since $b$ should not depend on $\Omega$.

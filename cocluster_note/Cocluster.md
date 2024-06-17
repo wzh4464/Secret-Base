@@ -180,17 +180,17 @@ $$
 > $$\mathcal{L} = x_{ji} m_{jk} y_{ki} - \lambda_{ij} x_{kj} x_{ki} - \frac{1}{2}\lambda_{ij} y_{kj} y_{ki} - \frac{1}{2}\lambda_{ij} \lambda_{ij}. $$
 >
 > $$
-> \begin{align}
+> \begin{aligned}
 > 0 = \frac{\partial \mathcal{L}}{\partial x_{ab}} &= m_{ak} y_{kb} - \lambda_{ij} \frac{\partial x_{kj} x_{ki}}{\partial x_{ab}} =MY - X\Lambda \\
 > 0 = \frac{\partial \mathcal{L}}{\partial y_{ab}} &= m_{ka} x_{bk} - \lambda_{ij} \frac{\partial y_{kj} y_{ki}}{\partial y_{ab}} =M^\top X - Y\Lambda
-> \end{align}
+> \end{aligned}
 > $$
 >
 > $$
-> \begin{align}
+> \begin{aligned}
 > M M^\top (X_1, X_2, \cdots, X_k) &= M M^\top X = M Y \Lambda = X \Lambda^2 \\
 > &= X \text{diag}(\lambda_1^2, \lambda_2^2, \cdots, \lambda_k^2) = (\lambda_1^2 X_1, \lambda_2^2 X_2, \cdots, \lambda_k^2 X_k)
-> \end{align}
+> \end{aligned}
 > $$
 >
 > 于是 $X$ 是 $M$ 的前 $k$ 个最大的奇异值对应的左奇异向量.
