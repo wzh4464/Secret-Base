@@ -24,6 +24,12 @@ jobs:
       - name: Install pandoc
         run: sudo apt-get install pandoc
 
+      - name: Install latex
+        run: sudo apt-get install texlive-latex-base
+
+      - name: Add pdflatex to PATH
+        run: echo "export PATH=$PATH:/usr/bin/pdflatex" >> $GITHUB_ENV
+
       - name: Convert Markdown to PDF
         run: |
           mkdir pdfs
