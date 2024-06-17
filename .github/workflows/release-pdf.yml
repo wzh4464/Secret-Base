@@ -42,7 +42,7 @@ jobs:
       - name: Convert Markdown to PDF with xelatex
         run: |
               mkdir -p pdfs
-              find . -name "*.md" | while IFS= read -r file; do
+              find . -name "Excalidraw" -prune -name "*.md" | while IFS= read -r file; do
                 pandoc "$file" -o "pdfs/$(basename "$file" .md).pdf" --pdf-engine=xelatex --template=template/my_template.latex
               done
 
