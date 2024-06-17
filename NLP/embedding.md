@@ -1,9 +1,11 @@
+---
+toc: true
+documentclass: "ctexart"
+classoption: "UTF8"
+---
 # Text Embedding
-
 ## Contrastive Learning
-
 对比学习（Contrastive Learning）用于生成文本嵌入。在文本聚类的背景下，对比学习主要是通过在相似和不相似的样本之间建立对比来训练模型，使得相似样本在嵌入空间中靠近，不相似样本远离。
-
 1. BERT (Bidirectional Encoder Representations from Transformers)
 方法和架构：BERT使用Transformer架构，特别是其编码器部分。BERT通过双向训练深度Transformer模型来生成文本的上下文嵌入。它在大规模的文本数据上进行预训练，使用两种主要任务：掩码语言模型（Masked Language Model, MLM）和下一个句子预测（Next Sentence Prediction, NSP）。
 特点：BERT的双向编码使得它能够捕捉到更丰富的上下文信息，对多种自然语言处理任务有很好的表现。

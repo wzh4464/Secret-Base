@@ -1,14 +1,15 @@
+---
+toc: true
+documentclass: "ctexart"
+classoption: "UTF8"
+---
 # Open VPN
-
 1. install docker
    Note: check if daemon is running
-
    ```bash
    sudo systemctl status docker
    ```
-
 2. install openvpn
-
    ```bash
    OVPN_DATA="ovpn-zihan"
    docker volume create --name $OVPN_DATA
@@ -20,9 +21,7 @@
    docker run -v $OVPN_DATA:/etc/openvpn --rm -it kylemanna/openvpn easyrsa build-client-full zihan nopass
    docker run -v $OVPN_DATA:/etc/openvpn --rm kylemanna/openvpn ovpn_getclient zihan > zihan.ovpn
    ```
-
 3. pull the zihan.ovpn file to local machine
-
    ```bash
    rsync -avzP zihan_aws:zihan.ovpn .
    ```

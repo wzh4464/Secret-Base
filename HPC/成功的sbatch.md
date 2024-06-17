@@ -1,5 +1,9 @@
+---
+toc: true
+documentclass: "ctexart"
+classoption: "UTF8"
+---
 # scratch.sh
-
 ```bash
 #!/bin/bash
 #SBATCH --partition=gpu_short
@@ -13,8 +17,6 @@
 module load cuda/11.6.0
 OUTPUT=/home/zihanwu7/scratch/output.txt
 cd /home/zihanwu7/scratch/own_transformer
-
 python main.test.py >> $OUTPUT
-
 date        >> $OUTPUT
 ```

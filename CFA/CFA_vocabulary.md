@@ -1,5 +1,9 @@
+---
+toc: true
+documentclass: "ctexart"
+classoption: "UTF8"
+---
 # Vocabulary
-
 - forgone: [adj.] given up, renounced, 放弃的
 - protfolio: [n.] a range of investments held by a person or organization, 投资组合
 - dividend: [n.] a sum of money paid regularly (typically quarterly) by a company to its shareholders out of its profits (or reserves), 股息

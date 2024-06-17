@@ -1,5 +1,9 @@
+---
+toc: true
+documentclass: "ctexart"
+classoption: "UTF8"
+---
 # Steps to find co-clusters in a compatibility matrix
-
 > Assume the compatibility matrix is $A_{ij}$.
 >
 > Step 1: Compute horizontal projection $P_i(i) = \sum_{j} A_{ij}$

@@ -1,10 +1,11 @@
-
-
+---
+toc: true
+documentclass: "ctexart"
+classoption: "UTF8"
+---
 # User Guide for Accessing Central HPC Cluster (CityU Burgundy) --- 访问中央HPC集群用户指南（CityU Burgundy）
-
 # User Guide for Accessing Central HPC Cluster (CityU Burgundy)  
 访问中央HPC集群用户指南（CityU Burgundy）
-
 *   [Access to the System  
     访问系统](#access)
 *   [Job Submission  工作提交](#job)
@@ -13,17 +14,14 @@
 *   [Disk Storage and Quota  
     磁盘存储和配额](#diskstorage)
 *   [Software Stacks 软件堆栈](#software)
-
 ## Access to the System  
 访问系统
-
 *   There is no graphical user interface for Burgundy, users must logon the system with Secure Shell (SSH), and “x forwarding with SSH” is supported with -Y option.  
     Burgundy 没有图形用户界面，用户必须使用 Secure Shell (SSH) 登录系统，并且 -Y 选项支持“使用 SSH 进行 x 转发”。
 *   Use PuTTY (on Window) or Terminal (Linux or Mac) to access Burgundy.  
     使用 PuTTY（在 Window 上）或终端（Linux 或 Mac）访问 Burgundy。
 *   Users should login to the system with CityU EID and Password. At the SSH terminal, type:  
     用户应使用 CityU EID 和密码登录系统。在 SSH 终端输入：
-    
     > ssh <EID>@burgundy.hpc.cityu.edu.hk  
     > ssh @burgundy.hpc.cityu.edu.hk
     > 
@@ -31,14 +29,10 @@
     > 
     > ssh <EID>@144.214.138.99  
     > ssh @144.214.138.99
-    
 *   PuTTY can be downloaded from [https://www.putty.org/](https://www.putty.org/)  
     PuTTY 可以从 https://www.putty.org/ 下载
-
 ![](1691122292-9f48917200673547e9e985c07557671f.jpg)
-
 ## Job Submission 工作提交
-
 1.  General Policy Statement 一般政策声明  
     _The current scheduling policy and resource restrictions, including partition, quota, and charging scheme, are temporary. The final design will be discussed, decided, and regularly reviewed by the User Committee.  
     当前的调度策略和资源限制，包括分区、配额和计费方案，都是临时的。最终设计将由用户委员会讨论、决定并定期审查。_
@@ -51,8 +45,6 @@
         *   Please contact the HPC administrator if you need to use below partitions, or you have special needs.  
             如果您需要使用以下分区，或者有特殊需求，请联系HPC管理员。![](1691122292-e1f88732aadb6830326a20025beaa5c9.jpg)
     3.  Job Priority 工作优先级  
-        
-    
     *   Instead of using FIFO scheduling scheme, the scheduling priority on the HPC depends on several factors: Job Size, Job Ages, Quality of Service (QoS), Usage history (Fair Share) and the Partition Properties.  
         HPC 上的调度优先级不是使用 FIFO 调度方案，而是取决于几个因素：作业大小、作业期限、服务质量 (QoS)、使用历史记录（公平共享）和分区属性。
     *   Ref.  [https://slurm.schedmd.com/classic\_fair\_share.html](https://slurm.schedmd.com/classic_fair_share.html)  
@@ -61,26 +53,18 @@
         我们正在与外部顾问合作，完善调度政策以确保公平性。
     *   We favour multi-node jobs by offering higher scheduling priorities for these partitions. However, intentionally requesting excessive resource to take advantage of this policy is strictly prohibited. Users’ actual workloads are closely monitored, and repeated offenders of this rule will lead to account suspensions.  
         我们通过为这些分区提供更高的调度优先级来支持多节点作业。但是，严禁故意请求过多资源来利用此政策。用户的实际工作负载受到密切监控，屡次违反此规则将导致帐户被暂停。
-    
 3.  Job Scheduler and Submission  
     作业调度和提交
     1.  Job Scheduler 作业调度程序
-    
     *   Simple Linux Utility for Resource Management (SLURM) is an open source, fault-tolerant, and highly scalable cluster management and job scheduling system for large and small Linux clusters. It has been widely used in many HPC centres.  
         Simple Linux Utility for Resource Management (SLURM) 是一个开源、容错且高度可扩展的集群管理和作业调度系统，适用于大型和小型 Linux 集群。它已在许多HPC中心广泛使用。
     *   Ref. https://slurm.schedmd.com/overview.html  
         参考号https://slurm.schedmd.com/overview.html  
-        
-    
     3.  Job submission 作业提交  
         *   HPC users must familiarise themselves with SLURM commands in order to send their workloads to appropriate computational resources (CPU and GPU nodes). Four frequently used commands include sinfo, squeue, sbatch, &amp; scancel.  
             HPC 用户必须熟悉 SLURM 命令，才能将其工作负载发送到适当的计算资源（CPU 和 GPU 节点）。四个常用命令包括 sinfo、squeue、sbatch 和 scancel。  
-              
             **Useful SLURM Commands: 有用的 SLURM 命令：**  
-              
             ![](1691122292-e18b35d37c1979a436e959875954f2bc.png)  
-              
-            
             |     |     |     |
             | --- | --- | --- | 
             | **squeue 排队** |     | to check status of your jobs  <br>检查您的工作状态 |
@@ -94,7 +78,6 @@
             | PREEMPTED 抢占 | **PR** |     | The job was terminated because of preemption by another job.  <br>该作业因被另一个作业抢占而终止。 |
             | SUSPENDED 暂停 | **S** |     | A running job has been stopped with its cores released to other jobs.  <br>正在运行的作业已停止，其核心被释放给其他作业。 |
             | STOPPED 停止 | **ST** |     | A running job has been stopped with its cores retained.  <br>正在运行的作业已停止，但保留了其核心。 |
-            
             |     |     |
             | --- | --- | 
             | _Job Reason Codes: 工作原因代码：  <br>_([_https://slurm.schedmd.com/resource\_limits.html_](https://slurm.schedmd.com/resource_limits.html)_)_  <br>(https://slurm.schedmd.com/resource\_limits.html) | 
@@ -109,7 +92,6 @@
             |     |     |     |
             | **sbatch <script> sbatch <脚本>** |     | to submit a batch job  <br>提交批处理作业 |
             | **scancel <job id> scancel <作业 ID>** |     | to kill a waiting or running job  <br>终止正在等待或正在运行的作业 |
-            
             **  
             Batch Submission: 批量提交：**
             *   A submission script is required to submit a batch job to the system.  
@@ -122,8 +104,6 @@
                     以 #SBATCH 开头的行是 SLURM 指令，只会由 SLURM 调度程序读取，即这些 SLURM 指令行只会被 Linux shell 视为注释。
             *   Here is an example of a submission script for a CPU node job.  
                 以下是 CPU 节点作业的提交脚本示例。  
-                  
-                
                 ```plain
                 #!/bin/bash
                 #SBATCH --partition=cpu_14d1n
@@ -138,21 +118,13 @@
                 module load  intelmpi/2019.8.254
                 SIESTA=/cm/shared/apps/chemistry/siesta/4.1-266/bin/siesta
                 OUTPUT=/home/johndoe/scratch/C60.output
-                
                 cd /home/johndoe/scratch/C60/1
                 mpirun -genv OMP_NUM_THREADS=4 -genv I_MPI_PIN=1 -genv OMP_PROC_BIND=true -genv OMP_PLACES=cores $SIESTA  < input.fdf > $OUTPUT
-                
                 date >>$OUTPUT
                 ```
-                
-                  
-                
                 ![](1691122292-40ed3afc19368cd16f83b79c3af38c23.jpg)
-                
             *   Here is another example of a submission script for a one GPU job.  
                 以下是一个 GPU 作业的提交脚本的另一个示例。  
-                  
-                
                 ```plain
                 #!/bin/bash
                 #SBATCH --partition=gpu_7d1g
@@ -164,43 +136,29 @@
                 #SBATCH --time=0-01:00:00        # Time limit day-hrs:min:sec
                 #SBATCH --output=gpujob_%j.log   # Standard output
                 #SBATCH --error=gpujob_%j.err    # Standard error log
-                
                 module load gcc openmpi/4.0.5/gcc/8.3.0
                 module load cuda/11.0.2 cuda/blas/11.0.2 cuda/fft/11.0.2
                 OUTPUT=/home/johndoe/scratch/gpuburn.out
                 cd /home/johndoe/scratch/gpu-burn/
-                
                 ./gpu_burn 100  >> $OUTPUT
-                
                 date        >> $OUTPUT
                 ```
-                
-                  
-                
                 ![](1691122292-0f6ddbca85fd766e5146365c5bc4b370.jpg)
-                
                 **  
                 Interactive Scheduling: 互动调度：**
-                
                 WARNING: Users are not encouraged to use interactive scheduling for long production computation, and interactive jobs may be terminated due to the heavy workloads on the login node. Limitations on the use of Interactive Scheduling will be implemented soon.  
                 警告：不鼓励用户使用交互式调度进行长时间的生产计算，并且交互式作业可能会由于登录节点上的繁重工作负载而终止。交互式调度的使用限制将很快实施。
-                
                 *   For certain kinds of workloads that require manual manipulations during the computation, users may request for an interactive scheduling.  
                     对于某些在计算过程中需要手动操作的工作负载，用户可以请求交互式调度。
                 *   Here is an example of an interactive job for requesting one GPU:  
                     以下是请求一个 GPU 的交互式作业的示例：  
-                      
-                    
                     ```plain
                     srun --partition=gpu_7d1g --qos=normal  --nodes=1 --cpus-per-task=4 --ntasks-per-node=1 
                     --gres=gpu:1  --mem=50G -t1:00:0 --pty bash -i 
                     ```
-                    
-                      
                     ![](1691122292-cc325823deae0c80892a4e086bd28ada.jpg)
     4.  Quality of Service (QoS)  
         服务质量 (QoS)
-    
     *   QoS have been implemented in SLURM; it may affect the jobs in a few different aspects, e.g.  
         QoS已在SLURM中实现；它可能会在几个不同方面影响工作，例如
         *   Job Scheduling Priority (To be implemented in the future)  
@@ -215,7 +173,6 @@
         QoS将根据需要适时增加、删除或修改，恕不另行通知用户
     *   Users can use command **showQos** to check all QoSs on the system  
         用户可以使用命令 showQos 查看系统上的所有 QoS  
-          
         ![](1691122292-0884d7533c2892fba6a3e4aaad07f4e2.png)
     *   There are 2 types of QoSs:  
         有 2 种类型的 QoS：
@@ -233,11 +190,8 @@
                 debug QoS是为了用户在实际提交之前测试和验证他们的提交脚本，因此它具有非常高的优先级因素和非常严格的资源限制
             *   _stingy_ QoS is for users who want to run jobs with the lowest priority without charging (UsageFactor=0). These jobs may be preempted (suspended, re-queued or terminated) when higher priority jobs are submitted to the system.  
                 吝啬 QoS 适用于希望以最低优先级运行作业且不收费的用户 (UsageFactor=0)。当更高优先级的作业提交到系统时，这些作业可能会被抢占（挂起、重新排队或终止）。
-    
-
 ## General Guidelines for Job Submission  
 作业提交的一般准则
-
 1.  **Favour Large Jobs Policy 支持大量就业政策**  
     *   Users are encouraged to speed up the computational time by running parallel jobs across multiple nodes whenever possible, and thus we favour multi-node partitions by offering higher scheduling priorities within a shorter time limit.  
         我们鼓励用户尽可能通过在多个节点上运行并行作业来加快计算时间，因此我们通过在更短的时间限制内提供更高的调度优先级来支持多节点分区。
@@ -259,37 +213,26 @@
     *   Because of _backfilling algorithm_, waiting time can be significantly reduced if a smaller **Time Limit** has been specified in the job script.  
         由于回填算法，如果在作业脚本中指定较小的时间限制，则可以显着减少等待时间。
 3.  **Use of Local Scratch 使用局部划痕**
-
 *   Many jobs can take advantage of local scratch, and there is a 350GB local scratch at “/local” on each compute node.  
     许多作业可以利用本地暂存，每个计算节点上的“/local”都有 350GB 的本地暂存。
 *   Users should remove all data on the local scratch when the computational task is completed. All data on the local scratch are not retrievable when the allocation is finished.  
     当计算任务完成时，用户应该删除本地暂存上的所有数据。分配完成后，本地暂存上的所有数据都不可检索。  
-    
-
 ## Disk Storage and Quota  
 磁盘存储和配额
-
 1.  **General Storage Policies 一般存储策略**
-
 1.  User Guidelines 用户指南
-
 *   It is the users’ responsibility to maintain and backup their own data on the HPC system.  
     用户有责任维护和备份自己在 HPC 系统上的数据。
 *   Users should only store research related data on the HPC storage system, and the HPC storage should not be considered as a permanent or backup data storage. All non-researched related or unused data found on the system will be erased without advance notice.  
     用户应仅将研究相关数据存储在HPC存储系统上，并且HPC存储不应被视为永久或备份数据存储。系统上发现的所有非研究相关或未使用的数据将被删除，恕不另行通知。
 *   Any illegal data or material found on the file system will be reported to the authority; related user accounts will be frozen, and the related data will be erased when the investigation is finished; users cannot claim for any loss because of this.  
     在文件系统中发现任何非法数据或材料将向主管部门报告；调查结束后，相关用户账户将被冻结，相关数据将被删除；用户不能因此而索赔。
-
 3.  Data Backup 数据备份
-
 *   There is **no** data backup service for the HPC service currently, but we will consider providing this service at a later stage.  
     目前HPC服务还没有数据备份服务，但我们会考虑在后期提供此服务。
-
 3.  **Disk Quota 磁盘配额**  
-    
     The disk quota scheme has not been enforced yet, but it will be implemented in the near future. The following scheme has been proposed, and users may use it as a reference at this stage.  
     磁盘配额计划尚未实施，但将在不久的将来实施。提出了如下方案，现阶段用户可以作为参考。
-    
     1.  Home Directory: 50GB fixed  
         主目录：固定 50GB
         *   Persistent (i.e. no time limit) home space for user login.  
@@ -304,7 +247,6 @@
                 输入和提交脚本的模板。
     2.  Scratch Directory: 300GB by default  
         暂存目录：默认300GB
-    
     *   A working space for users to carry out computational jobs  
         供用户执行计算工作的工作空间
         *   Storing inputs, outputs and temporary/scratch files  
@@ -315,81 +257,56 @@
             作业完成后，用户应将重要数据备份到自己的本地存储上。
     *   Additional space can be arranged upon request with justification. Each case will be considered individually.  
         可根据要求并有理由安排额外的空间。每个案例都会被单独考虑。
-    
     4.  NAS (Will be implemented in future)  
         NAS（未来将实现）
-
 ##   
 Software Stacks 软件堆栈
-
 1.  **Environment Modules 环境模块  
     **
-    
     Lmod Environment Modules have been used to manage the software packages on the HPC system, and users can dynamically change their software environment through modulefiles.  
     Lmod环境模块已用于管理HPC系统上的软件包，用户可以通过模块文件动态更改其软件环境。  
     ([https://lmod.readthedocs.io/en/latest/](https://lmod.readthedocs.io/en/latest/))  
     ( https://lmod.readthedocs.io/en/latest/)
-    
     There is a public modulefile set managed by the Computing Services Centre (CSC); the environment variable MODULEPATH has been set as follows by default.  
     有一个由计算服务中心（CSC）管理的公共模块文件集；环境变量 MODULEPATH 默认设置如下。  
-      
-    
     ```plain
     MODULEPATH=/cm/local/modulefiles:/etc/modulefiles:/usr/share/modulefiles:/usr/share/Modules/modulefiles:/cm/shared/modulefiles/compiler:/cm/shared/modulefiles/library:/cm/shared/modulefiles/mpi:/cm/shared/apps/mpi/hpcx/2.8.0/modulefiles
     ```
-    
-      
     ![](1691122292-8486866cfc269077bb48bc6d524e30f9.png)  
     The current modulefile set is minimal, and we are preparing a more comprehensive set which covers more scientific applications and programming tools. Users will be informed when the new environment set is ready.  
     当前的模块文件集很小，我们正在准备一个更全面的集，其中涵盖更多的科学应用程序和编程工具。当新环境集准备就绪时，用户将收到通知。
 2.  **Use of Environment Modules  
     环境模块的使用**
-
 1.  Common module commands 常用模块命令  
     ![](1691122292-6144a7220c868c033852e25e95f4e653.jpg)
 2.  Append self-maintained module set  
     追加自维护模块集  
-    
     Users can create their own modulefile set by appending the path of the directories which contain the modulefiles to the MODULEPATH variable.  
     用户可以通过将包含模块文件的目录路径附加到 MODULEPATH 变量来创建自己的模块文件集。
-    
     The syntax of modulefile can be found on this web page:  
     modulefile的语法可以在这个网页上找到：  
     [https://lmod.readthedocs.io/en/latest/100\_modulefile\_examples.html](https://lmod.readthedocs.io/en/latest/100_modulefile_examples.html)
-    
-
 4.  **Singularity Containers 奇点容器**  
-    
     Users are encouraged to install their own application packages as a Singularity container image ([https://sylabs.io/guides/3.7/user-guide/](https://sylabs.io/guides/3.7/user-guide/)) on their own desktop/workstation/labtop, and run it on Burgundy’s GPU node.  This is the only method to run customised system environment (e.g. a different Linux distro such as Ubuntu 18) or libraries (e.g. python 2, unsupported libgc) or optimised AI packages prepared by Nvidia.  
     鼓励用户将自己的应用程序包作为 Singularity 容器映像（https://sylabs.io/guides/3.7/user-guide/）安装在自己的桌面/工作站/labtop 上，并在 Burgundy 的 GPU 节点上运行。这是运行定制系统环境（例如不同的 Linux 发行版，如 Ubuntu 18）或库（例如 python 2、不支持的 libgc）或 Nvidia 准备的优化 AI 包的唯一方法。
-    
     Users can build their own singularity with the following reference:  
     用户可以参考以下内容构建自己的奇点：  
     ([https://sylabs.io/guides/3.7/user-guide/quick\_start.html#build-images-from-scratch](https://sylabs.io/guides/3.7/user-guide/quick_start.html#build-images-from-scratch))  
     （https://sylabs.io/guides/3.7/user-guide/quick\_start.html#build-images-from-scratch）  
-      
-    
     |     |     |     |
     | --- | --- | --- |
     | i) Prepare a definition file under a X86-64 Linux environment.  <br>i) 在X86-64 Linux环境下准备定义文件。<br><br>*   In this example, we will install the packages, such as gcc and python, with apt-get on Ubuntu 18.04 images.  <br>    在此示例中，我们将使用 apt-get 在 Ubuntu 18.04 映像上安装 gcc 和 python 等软件包。<br>*   CUDA 10.0 libraries directly downloaded from Nvidia will be installed.  <br>    将安装直接从 Nvidia 下载的 CUDA 10.0 库。<br>*   Tensorflow (with GPU supported), numpy and OpenCV will be installed with pip within the image subsequently.  <br>    随后，Tensorflow（支持 GPU）、numpy 和 OpenCV 将与 pip 一起安装在映像中。<br><br>![](1691122292-6e26dd7d0953931e1f41c6145656c166.jpg) |
     | ii) Build image with Singularity command. This example was done on a CentOS Linux VM (Virtual Box) under MacOS  <br>ii) 使用 Singularity 命令构建图像。此示例是在 MacOS 下的 CentOS Linux VM（Virtual Box）上完成的  <br>  <br>![](1691122292-0edfb8f23c13acfb1f34dd776187503d.jpg) |
     | iii) Upload the Singularity image to HPC Login Node  <br>iii) 将 Singularity 镜像上传到 HPC 登录节点  <br>  <br>![](1691122292-f2cbb19cf66c90f12754f9bec2447fc9.jpg) |
     | iv) Submit the job and request the resource; in this example, an interactive schedule is used for illustration purpose only, and users should submit batch jobs if possible.  <br>iv) 提交作业并请求资源；在此示例中，交互式计划仅用于说明目的，用户应尽可能提交批处理作业。<br><br>*   Login to system, and submit an interactive job  <br>    登录系统，提交交互式作业  <br>      <br>    ![](1691122292-41c17c50caf5648b13c2a8aee0db0dd4.jpg)<br>*   When the resource is allocated, the prompt will change to indicate which node has been assigned (i.e. hpc-gpu005 in this case).  <br>    分配资源时，提示符将更改以指示已分配哪个节点（即本例中的 hpc-gpu005）。  <br>      <br>    For illustration purpose, we show the distro information of the Base System; it is a CentOS 8  <br>    为了便于说明，我们显示了基本系统的发行版信息；它是 CentOS 8  <br>      <br>    ![](1691122292-097fc6f1ad267d1ad23cbca58ed4af83.jpg)<br>*   Execute Linux commands from the singularity image.  <br>    从奇点映像执行 Linux 命令。  <br>    First, we ask to show the distro information of the client (the image), and it is a Ubuntu 18.04  <br>    首先，我们要求显示客户端（镜像）的发行版信息，它是 Ubuntu 18.04  <br>      <br>    ![](1691122292-75f5f171f9d4085ea8f4db5458aa8879.jpg)<br>*   Then, we call python3 from the image.  <br>    然后，我们从图像中调用 python3。  <br>      <br>    ![](1691122292-fdb787ad1ae674a0909f4c6b1155e120.jpg) |
-    
-      
-    
 5.  **Other Licensed Software 其他许可软件**
-
 1.  Matlab MATLAB  
-    
     A copy of Matlab has been installed, and you can find Matlab R2002b at the following location:  
     Matlab 的副本已安装，您可以在以下位置找到 Matlab R2002b：  
       /cm/shared/apps/maths/matlab/R2020b/bin  
     /cm/shared/apps/maths/matlab/R2020b/bin  
-      
     CityU’s Matlab license servers are reachable to all nodes, and users may include this in their license files if they prefer to run their own copy of Matlab.  
     城大的 Matlab 许可证服务器可访问所有节点，如果用户希望运行自己的 Matlab 副本，则可以将其包含在其许可证文件中。  
-    
     ```plain
     ############################################################
     SERVER berkeley101.ad.cityu.edu.hk 005056981E16 27000
@@ -398,7 +315,6 @@ Software Stacks 软件堆栈
     USE_SERVER
     ############################################################
     ```
-    
 2.  Other Commercial Software  
     其他商业软件  
     Due to the license issue, the CSC will help to install shared license to the license server, but we cannot provide support for any user-owned license packages. Please contact the distributor of the software for support.  

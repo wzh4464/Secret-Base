@@ -1,10 +1,13 @@
+---
+toc: true
+documentclass: "ctexart"
+classoption: "UTF8"
+---
 # umount disks
-
 - If 占用
   - `df -lh`
   - `sudo umount /dev/**`
   - `sudo kill ***`
-
 $$\mu_{fg} = \mu_g - \mu_f$$
 $$\Sigma_{fg} = \Sigma_f + \Sigma_g$$
 $$\mu_{fg}^T \Sigma_{fg}^{-1} \mu_{fg}$$

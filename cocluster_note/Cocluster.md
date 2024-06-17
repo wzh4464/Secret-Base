@@ -1,45 +1,35 @@
+---
+toc: true
+documentclass: "ctexart"
+classoption: "UTF8"
+---
 # Cocluster
-
 ## Cocluster History
-
 1. 首次出现: 运用于基因表达数据的聚类算法, Cheng & Church (2000) [^cheng2000BiclusteringExpressionData], 使用方均 residuals 作为度量, 找到所有 mannually selected 的 thereshold 以下的子矩阵.
-
 2. Spectral Co-clustering: 该算法使用了一种基于谱聚类的方法, SCC [^dhillon2001CoclusteringDocumentsWordsa]. 该算法 coclusters on word-document matrix, 使用了一个基于谱聚类的方法, 它将数据矩阵转换为一个二分图, 最小化边权重来 partition.
-
 于是有了三种：
-
 - Graph theory [^kluger2003SpectralBiclusteringMicroarray][^sun2014BiforceLargescaleBicluster]
 - Statistical model [^dhillon2003InformationtheoreticCoclustering][^govaert2003ClusteringBlockMixturea][^govaert2005EMAlgorithmBlock][^govaert2008BlockClusteringBernoullia][^shan2008BayesianCoclusteringd]
 - Matrix factorization [^gu2009CoclusteringManifoldsc] [^labiod2015UnifiedFrameworkDatac] [^liu2014NetworkassistedCoclusteringAlgorithmc][^madeira2004BiclusteringAlgorithmsBiological] [^salah2018WordCooccurrenceRegularizeda][^wang2011FastNonnegativeMatrix] [^wang2017PenalizedNonnegativeMatrixc] [^yu2017NetworkaidedBiClusteringDiscovering]
-
 另一种分类方法是：
-
 - optimization-based models [^whang2017NonExhaustiveOverlappingCoClustering]
   - graph-based models [^dhillon2001CoclusteringDocumentsWordsa] [^NIPS2017_00a03ec6]
   - NFM [^junweihan2017BilateralKMeansAlgorithm] [^ding2006OrthogonalNonnegativeMatrix] [^long2005CoclusteringBlockValue]
 - information-theoretic models [^role2019CoClustPythonPackage]
 - neural network models [^dongkuanxu2019DeepCoClustering]
-
 应用有：
-
 - Text mining
 - Bioinformatics
 - Recommendation system [^vizinepereira2015SimultaneousCoclusteringLearninga]
-
 ## 优点
-
 <!-- often clusters are embedded in subspaces comprised of a subset of features, and different features may be relevant for different clusters. Algorithms that operate globally in the feature space fail to discover such local patterns -->
-
 - 与传统聚类算法相比, coclustering 能够发现数据中的子空间, 即子矩阵, 这些子矩阵可能在不同的特征子集中嵌入, 不同的特征可能对不同的聚类有意义. 在特征空间中全局操作的算法无法发现这种局部模式.
-
 ## Evaluation Score
-
 - variance
 - maximum interaction criterion [^bock2016ProbabilisticTwowayClustering]
 - mean-square residue [^cheng2000BiclusteringExpressionData]
 - scaling mean-square residue [^mukhopadhyay2009NovelCoherenceMeasurec]
 - average correlation value [^teng2008DiscoveringBiclustersIterativelyc]
-
 [^cheng2000BiclusteringExpressionData]: Cheng, Y., & Church, G. (2000). Biclustering of Expression Data. Proceedings. International Conference on Intelligent Systems for Molecular Biology. <https://www.cs.princeton.edu/courses/archive/fall03/cs597F/Articles/biclustering_of_expression_data.pdf>
 [^dhillon2001CoclusteringDocumentsWordsa]: Dhillon, I. S. (2001). Co-clustering documents and words using bipartite spectral graph partitioning. ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, 269–274. <https://doi.org/10.1145/502512.502550>
 [^vizinepereira2015SimultaneousCoclusteringLearninga]: Vizine Pereira, A. L., & Hruschka, E. R. (2015). Simultaneous co-clustering and learning to address the cold start problem in recommender systems. Knowledge-Based Systems, 82, 11–19. <https://doi.org/10.1016/j.knosys.2015.02.016>
@@ -71,9 +61,7 @@
 [^NIPS2017_00a03ec6]: Nie, F., Wang, X., Deng, C., & Huang, H. (2017). Learning a structured optimal bipartite graph for co-clustering. In I. Guyon, U. V. Luxburg, S. Bengio, H. Wallach, R. Fergus, S. Vishwanathan, & R. Garnett (Eds.), Advances in neural information processing systems (Vol. 30). Curran Associates, Inc. <https://proceedings.neurips.cc/paper_files/paper/2017/file/00a03ec6533ca7f5c644d198d815329c-Paper.pdf>
 [^ding2006OrthogonalNonnegativeMatrix]: Ding, C., Li, T., Peng, W., & Park, H. (2006). Orthogonal nonnegative matrix t-factorizations for clustering. Proceedings of the 12th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, 126–135. <https://doi.org/10.1145/1150402.1150420>
 [^long2005CoclusteringBlockValue]: Long, B., Zhang, Z. (Mark), & Yu, P. S. (2005). Co-clustering by block value decomposition. Knowledge Discovery and Data Mining, 635–640. <https://doi.org/10.1145/1081870.1081949>
-
 ## Spectral clustering
-
 - 通过谱聚类的方法, 将数据矩阵转换为一个二分图, 最小化边权重来 partition.
 - Data matrix: $B \in \mathbb{R}^{n \times m}$, $n$ 为行数, $m$ 为列数.
 - $$ A = \begin{bmatrix} 0 & B \\ B^T & 0 \end{bmatrix} $$
@@ -87,20 +75,15 @@
 - 取 $Y$ 的第 $j$ 列作为 $y_j$, $y_j^\top D y_j = \lambda_j$ 是 clustering $j$ 的 associate degree.
 - $ y_j^\top A y_j $ 是 clustering $j$ 内部的度.
 - $ y_j^\top L y_j = \lambda_j - y_j^\top A y_j $ 是 clustering $j$ 的度.
-
 ### Theorem
-
 $$ \sum_{j=1}^{k} \frac{y_j^\top L y_j}{y_j^\top D y_j} = \mathrm{Tr} (Z^\top L Z) $$
 于是优化目标成为
 $$ \min_{Z^\top D Z = I} \mathrm{Tr} (Z^\top L Z) $$
 其中 $ Z = Y(Y^\top D Y)^{-\frac{1}{2}}. $
-
 如果记
-
 - $F = D^{-\frac{1}{2}} Z$,
 - $F^\top = [U^\top, V^\top]$,
 - $D = \text{diag}(D_u, D_v)$,
-
 则记 $ O = U^\top D_u^{\frac{1}{2}} B D_v^{\frac{1}{2}} V $
 优化目标成为
 $$
@@ -108,62 +91,44 @@ $$
 \max_{U^\top U + V^\top V = I} \mathrm{Tr} (O)
 \end{equation}
 $$
-
 ### Proof
-
 - $ D' = Y^\top D Y $, 可以证明是对角矩阵, 对角元素是 $ \lambda_i $.
 - $ L' = Y^\top L Y $
 - $ Z = Y(D')^{-\frac{1}{2}} $
-
 $$
 \begin{array}{ll}
 \mathrm{Tr} (Z^\top L Z) &= \mathrm{Tr}[(Y(D')^{-\frac{1}{2}})^\top L Y(D')^{-\frac{1}{2}}] \\
 &= \mathrm{Tr}(L' (D')^{-1}) \\
 \end{array}
 $$
-
 先算一下 $l'_{ii}$:
-
 $$
 \begin{array}{ll}
 l'_{ii} &= y_{ki} (l_{kj}) y_{kj} \\
 &= y_i^\top L y_i \\
 \end{array}
 $$
-
 由于 $ D' $ 是对角矩阵, 所以 $ (D')^{-1} $ 也是对角矩阵, 所以
-
 $$
 \begin{array}{ll}
 \mathrm{Tr} (Z^\top L Z) &= \sum_{i=1}^{N} \frac{l'_{ii}}{d'_{ii}} \\
 &= \sum_{i=1}^{N} \cfrac{y_i^\top L y_i}{y_i^\top D y_i}
 \end{array}
 $$
-
 检查一下 $Z^\top D Z = I$ 需要 $Y$ 满足什么条件. 其实就是 $Y^\top D Y$ 可以进行 $-\frac{1}{2}$ 次方操作. 也就是说 $Y^\top D Y$ 必须是正定矩阵. 这要求 $Y$ 是列满秩的, 也就是说没有两个线性相关的聚类.
-
 因为 $Y^\top D Y$ 正定等价于 $ \forall x \neq 0, x^\top Y^\top D Y x = (Yx)^\top D (Yx) > 0 $. 记 $ z = Yx $, 则 $ x^\top Y^\top D Y x = z^\top D z > 0 $, 所以只需 $x \neq 0$ 时有 $z \neq 0$ 即可.
-
 而
-
 $$ Z^\top L Z = I - O - O^\top $$
 $$ Z^\top D Z = U^\top U + V^\top V = I $$
-
 则直接计算有
 $$ \begin{equation}\max_{U^\top U + V^\top V = I} \mathrm{Tr} (O)\end{equation} $$
-
 ### Lemma 连续情况的优化
-
 优化目标
-
 $$
 \max_{X^\top X + Y^\top Y = I} \mathrm{Tr} (X^\top M Y),
 $$
-
 其中 $M \in \mathbb{R}^{n_1 \times n_2}$, $X \in \mathbb{R}^{n_1 \times k}$, $Y \in \mathbb{R}^{n_2 \times k}$.
-
 那么其解为
-
 $$
 \begin{equation}
 \begin{cases}
@@ -173,7 +138,6 @@ Y = \frac{\sqrt{2}}{2} V_1
 \end{equation}
 $$
 其中, $U_1$ 和 $V_1$ 是 $M$ 前 $k$ 个最大的奇异值对应的左右奇异向量.
-
 > Proof:
 > 拉格朗日函数 $\mathcal{L} = \mathrm{Tr} (X^\top M Y) - \mathrm{Tr} (\frac{1}{2}\Lambda (X^\top X + Y^\top Y - I))$.
 >
@@ -195,9 +159,6 @@ $$
 >
 > 于是 $X$ 是 $M$ 的前 $k$ 个最大的奇异值对应的左奇异向量.
 > 同理可得 $Y$ 是 $M$ 的前 $k$ 个最大的奇异值对应的右奇异向量.
-
 ### 离散情况
-
 ## Conclusion
-
 ## References

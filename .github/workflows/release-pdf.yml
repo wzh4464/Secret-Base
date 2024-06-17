@@ -41,11 +41,10 @@ jobs:
 
       - name: Convert Markdown to PDF with xelatex
         run: |
-          mkdir pdfs
-          for file in $(find . -name "*.md"); do
-            # pandoc $file -o pdfs/$(basename $file .md).pdf --pdf-engine=xelatex --template=template/template.tex # address issue with blank in file name
-            pandoc "$file" -o "pdfs/$(basename "$file" .md).pdf" --pdf-engine=xelatex --template=template/template.tex
-          done
+              mkdir -p pdfs
+              find . -name "*.md" | while IFS= read -r file; do
+                pandoc "$file" -o "pdfs/$(basename "$file" .md).pdf" --pdf-engine=xelatex --template=template/my_template.latex
+              done
 
       - name: Create Release
         id: create_release
