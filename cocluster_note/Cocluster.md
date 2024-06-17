@@ -164,7 +164,6 @@ $$
 
 那么其解为
 
-<!-- X = sqrt2/2 U1, Y = sqrt2/2 V1, 用一个左大括号画成一个方程组 -->
 $$
 \begin{equation}
 \begin{cases}
@@ -175,10 +174,30 @@ Y = \frac{\sqrt{2}}{2} V_1
 $$
 其中, $U_1$ 和 $V_1$ 是 $M$ 前 $k$ 个最大的奇异值对应的左右奇异向量.
 
-### Proof
+> Proof:
+> 拉格朗日函数 $\mathcal{L} = \mathrm{Tr} (X^\top M Y) - \mathrm{Tr} (\frac{1}{2}\Lambda (X^\top X + Y^\top Y - I))$.
+>
+> $$\mathcal{L} = x_{ji} m_{jk} y_{ki} - \lambda_{ij} x_{kj} x_{ki} - \frac{1}{2}\lambda_{ij} y_{kj} y_{ki} - \frac{1}{2}\lambda_{ij} \lambda_{ij}. $$
+>
+> $$
+> \begin{align}
+> 0 = \frac{\partial \mathcal{L}}{\partial x_{ab}} &= m_{ak} y_{kb} - \lambda_{ij} \frac{\partial x_{kj} x_{ki}}{\partial x_{ab}} =MY - X\Lambda \\
+> 0 = \frac{\partial \mathcal{L}}{\partial y_{ab}} &= m_{ka} x_{bk} - \lambda_{ij} \frac{\partial y_{kj} y_{ki}}{\partial y_{ab}} =M^\top X - Y\Lambda
+> \end{align}
+> $$
+>
+> $$
+> \begin{align}
+> M M^\top (X_1, X_2, \cdots, X_k) &= M M^\top X = M Y \Lambda = X \Lambda^2 \\
+> &= X \text{diag}(\lambda_1^2, \lambda_2^2, \cdots, \lambda_k^2) = (\lambda_1^2 X_1, \lambda_2^2 X_2, \cdots, \lambda_k^2 X_k)
+> \end{align}
+> $$
+>
+> 于是 $X$ 是 $M$ 的前 $k$ 个最大的奇异值对应的左奇异向量.
+> 同理可得 $Y$ 是 $M$ 的前 $k$ 个最大的奇异值对应的右奇异向量.
 
-拉格朗日函数 $\mathcal{L} = \mathrm{Tr} (X^\top M Y) - \mathrm{Tr} (\Lambda (X^\top X + Y^\top Y - I))$.
+### 离散情况
 
-$ \frac{\partial \mathcal{L}}{\partial X} = 0 $, 得到 $M Y = X \Lambda$.
+## Conclusion
 
 ## References
