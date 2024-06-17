@@ -1,0 +1,48 @@
+name: Convert Markdown to PDF and Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Convert Markdown to PDF
+        run: |
+          mkdir pdfs
+          for file in $(find . -name "*.md"); do
+            pandoc "$file" -o "pdfs/$(basename "$file" .md).pdf"
+          done
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: v1.0.0
+          release_name: Release v1.0.0
+          body: |
+            This is the release description.
+          draft: false
+          prerelease: false
+
+      - name: Upload PDFs
+        uses: actions/upload-artifact@v2
+        with:
+          name: pdfs
+          path: pdfs
