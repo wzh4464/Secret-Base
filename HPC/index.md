@@ -37,7 +37,7 @@ classoption: "UTF8"
     > ssh @144.214.138.99
 * PuTTY can be downloaded from [https://www.putty.org/](https://www.putty.org/)  
     PuTTY 可以从 <https://www.putty.org/> 下载
-![](1691122292-9f48917200673547e9e985c07557671f.jpg)
+![](assets/1691122292-9f48917200673547e9e985c07557671f.jpg)
 
 ## Job Submission 工作提交
 
@@ -48,10 +48,10 @@ classoption: "UTF8"
     1. Job Partitions  作业分区
         * 7 CPU/GPU partitions are currently available for all users  
             目前7个CPU/GPU分区可供所有用户使用  
-            ![](1691122292-490aa854a327e6e416b23603d195a17d.jpg)
+            ![](assets/1691122292-490aa854a327e6e416b23603d195a17d.jpg)
     2. Special Partitions  特殊分区
         * Please contact the HPC administrator if you need to use below partitions, or you have special needs.  
-            如果您需要使用以下分区，或者有特殊需求，请联系HPC管理员。![](1691122292-e1f88732aadb6830326a20025beaa5c9.jpg)
+            如果您需要使用以下分区，或者有特殊需求，请联系HPC管理员。![](assets/1691122292-e1f88732aadb6830326a20025beaa5c9.jpg)
     3. Job Priority 工作优先级  
     * Instead of using FIFO scheduling scheme, the scheduling priority on the HPC depends on several factors: Job Size, Job Ages, Quality of Service (QoS), Usage history (Fair Share) and the Partition Properties.  
         HPC 上的调度优先级不是使用 FIFO 调度方案，而是取决于几个因素：作业大小、作业期限、服务质量 (QoS)、使用历史记录（公平共享）和分区属性。
@@ -132,7 +132,7 @@ classoption: "UTF8"
                 date >>$OUTPUT
                 ```
 
-                ![](1691122292-40ed3afc19368cd16f83b79c3af38c23.jpg)
+                ![](assets/1691122292-40ed3afc19368cd16f83b79c3af38c23.jpg)
             * Here is another example of a submission script for a one GPU job.  
                 以下是一个 GPU 作业的提交脚本的另一个示例。  
 
@@ -155,7 +155,7 @@ classoption: "UTF8"
                 date        >>$OUTPUT
                 ```
 
-                ![](1691122292-0f6ddbca85fd766e5146365c5bc4b370.jpg)
+                ![](assets/1691122292-0f6ddbca85fd766e5146365c5bc4b370.jpg)
                 **  
                 Interactive Scheduling: 互动调度：**
                 WARNING: Users are not encouraged to use interactive scheduling for long production computation, and interactive jobs may be terminated due to the heavy workloads on the login node. Limitations on the use of Interactive Scheduling will be implemented soon.  
@@ -170,7 +170,7 @@ classoption: "UTF8"
                     --gres=gpu:1  --mem=50G -t1:00:0 --pty bash -i 
                     ```
 
-                    ![](1691122292-cc325823deae0c80892a4e086bd28ada.jpg)
+                    ![](assets/1691122292-cc325823deae0c80892a4e086bd28ada.jpg)
     4. Quality of Service (QoS)  
         服务质量 (QoS)
     * QoS have been implemented in SLURM; it may affect the jobs in a few different aspects, e.g.  
@@ -308,7 +308,7 @@ Software Stacks 软件堆栈
 2. **Use of Environment Modules  
     环境模块的使用**
 1. Common module commands 常用模块命令  
-    ![](1691122292-6144a7220c868c033852e25e95f4e653.jpg)
+    ![](assets/1691122292-6144a7220c868c033852e25e95f4e653.jpg)
 2. Append self-maintained module set  
     追加自维护模块集  
     Users can create their own modulefile set by appending the path of the directories which contain the modulefiles to the MODULEPATH variable.  
@@ -325,10 +325,10 @@ Software Stacks 软件堆栈
     （<https://sylabs.io/guides/3.7/user-guide/quick\_start.html#build-images-from-scratch）>  
     |     |     |     |
     | --- | --- | --- |
-    | i) Prepare a definition file under a X86-64 Linux environment.  <br>i) 在X86-64 Linux环境下准备定义文件。<br><br>*In this example, we will install the packages, such as gcc and python, with apt-get on Ubuntu 18.04 images.  <br>    在此示例中，我们将使用 apt-get 在 Ubuntu 18.04 映像上安装 gcc 和 python 等软件包。<br>*   CUDA 10.0 libraries directly downloaded from Nvidia will be installed.  <br>    将安装直接从 Nvidia 下载的 CUDA 10.0 库。<br>*   Tensorflow (with GPU supported), numpy and OpenCV will be installed with pip within the image subsequently.  <br>    随后，Tensorflow（支持 GPU）、numpy 和 OpenCV 将与 pip 一起安装在映像中。<br><br>![](1691122292-6e26dd7d0953931e1f41c6145656c166.jpg) |
-    | ii) Build image with Singularity command. This example was done on a CentOS Linux VM (Virtual Box) under MacOS  <br>ii) 使用 Singularity 命令构建图像。此示例是在 MacOS 下的 CentOS Linux VM（Virtual Box）上完成的  <br>  <br>![](1691122292-0edfb8f23c13acfb1f34dd776187503d.jpg) |
-    | iii) Upload the Singularity image to HPC Login Node  <br>iii) 将 Singularity 镜像上传到 HPC 登录节点  <br>  <br>![](1691122292-f2cbb19cf66c90f12754f9bec2447fc9.jpg) |
-    | iv) Submit the job and request the resource; in this example, an interactive schedule is used for illustration purpose only, and users should submit batch jobs if possible.  <br>iv) 提交作业并请求资源；在此示例中，交互式计划仅用于说明目的，用户应尽可能提交批处理作业。<br><br>*Login to system, and submit an interactive job  <br>    登录系统，提交交互式作业  <br>      <br>    ![](1691122292-41c17c50caf5648b13c2a8aee0db0dd4.jpg)<br>*   When the resource is allocated, the prompt will change to indicate which node has been assigned (i.e. hpc-gpu005 in this case).  <br>    分配资源时，提示符将更改以指示已分配哪个节点（即本例中的 hpc-gpu005）。  <br>      <br>    For illustration purpose, we show the distro information of the Base System; it is a CentOS 8  <br>    为了便于说明，我们显示了基本系统的发行版信息；它是 CentOS 8  <br>      <br>    ![](1691122292-097fc6f1ad267d1ad23cbca58ed4af83.jpg)<br>*Execute Linux commands from the singularity image.  <br>    从奇点映像执行 Linux 命令。  <br>    First, we ask to show the distro information of the client (the image), and it is a Ubuntu 18.04  <br>    首先，我们要求显示客户端（镜像）的发行版信息，它是 Ubuntu 18.04  <br>      <br>    ![](1691122292-75f5f171f9d4085ea8f4db5458aa8879.jpg)<br>*   Then, we call python3 from the image.  <br>    然后，我们从图像中调用 python3。  <br>      <br>    ![](1691122292-fdb787ad1ae674a0909f4c6b1155e120.jpg) |
+    | i) Prepare a definition file under a X86-64 Linux environment.  <br>i) 在X86-64 Linux环境下准备定义文件。<br><br>_In this example, we will install the packages, such as gcc and python, with apt-get on Ubuntu 18.04 images.  <br>    在此示例中，我们将使用 apt-get 在 Ubuntu 18.04 映像上安装 gcc 和 python 等软件包。<br>_   CUDA 10.0 libraries directly downloaded from Nvidia will be installed.  <br>    将安装直接从 Nvidia 下载的 CUDA 10.0 库。<br>*   Tensorflow (with GPU supported), numpy and OpenCV will be installed with pip within the image subsequently.  <br>    随后，Tensorflow（支持 GPU）、numpy 和 OpenCV 将与 pip 一起安装在映像中。<br><br>![](assets/1691122292-6e26dd7d0953931e1f41c6145656c166.jpg) |
+    | ii) Build image with Singularity command. This example was done on a CentOS Linux VM (assets/Virtual Box) under MacOS  <br>ii) 使用 Singularity 命令构建图像。此示例是在 MacOS 下的 CentOS Linux VM（Virtual Box）上完成的  <br>  <br>![](1691122292-0edfb8f23c13acfb1f34dd776187503d.jpg) |
+    | iii) Upload the Singularity image to HPC Login Node  <br>iii) 将 Singularity 镜像上传到 HPC 登录节点  <br>  <br>![](assets/1691122292-f2cbb19cf66c90f12754f9bec2447fc9.jpg) |
+    | iv) Submit the job and request the resource; in this example, an interactive schedule is used for illustration purpose only, and users should submit batch jobs if possible.  <br>iv) 提交作业并请求资源；在此示例中，交互式计划仅用于说明目的，用户应尽可能提交批处理作业。<br><br>_Login to system, and submit an interactive job  <br>    登录系统，提交交互式作业  <br>      <br>    ![](assets/1691122292-41c17c50caf5648b13c2a8aee0db0dd4.jpg)<br>_   When the resource is allocated, the prompt will change to indicate which node has been assigned (i.e. hpc-gpu005 in this case).  <br>    分配资源时，提示符将更改以指示已分配哪个节点（即本例中的 hpc-gpu005）。  <br>      <br>    For illustration purpose, we show the distro information of the Base System; it is a CentOS 8  <br>    为了便于说明，我们显示了基本系统的发行版信息；它是 CentOS 8  <br>      <br>    ![](assets/1691122292-097fc6f1ad267d1ad23cbca58ed4af83.jpg)<br>_Execute Linux commands from the singularity image.  <br>    从奇点映像执行 Linux 命令。  <br>    First, we ask to show the distro information of the client (the image), and it is a Ubuntu 18.04  <br>    首先，我们要求显示客户端（镜像）的发行版信息，它是 Ubuntu 18.04  <br>      <br>    ![](assets/1691122292-75f5f171f9d4085ea8f4db5458aa8879.jpg)<br>_   Then, we call python3 from the image.  <br>    然后，我们从图像中调用 python3。  <br>      <br>    ![](assets/1691122292-fdb787ad1ae674a0909f4c6b1155e120.jpg) |
 5. **Other Licensed Software 其他许可软件**
 1. Matlab MATLAB  
     A copy of Matlab has been installed, and you can find Matlab R2002b at the following location:  
