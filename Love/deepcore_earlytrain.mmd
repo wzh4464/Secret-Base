@@ -1,0 +1,30 @@
+sequenceDiagram
+    participant Main
+    participant EarlyTrain
+    participant Train
+    participant Test
+
+    Main->>EarlyTrain: select()
+    activate EarlyTrain
+    EarlyTrain->>EarlyTrain: before_run()
+    loop For each epoch
+        EarlyTrain->>EarlyTrain: before_epoch()
+        EarlyTrain->>Train: train(epoch, list_of_train_idx)
+        activate Train
+        Train->>Train: before_train()
+        loop For each batch
+            Train->>Train: forward pass
+            Train->>Train: compute loss
+            Train->>Train: after_loss()
+            Train->>Train: while_update()
+            Train->>Train: backward pass
+        end
+        Train->>Train: finish_train()
+        deactivate Train
+        alt If test interval reached
+            EarlyTrain->>Test: test(epoch)
+        end
+        EarlyTrain->>EarlyTrain: after_epoch()
+    end
+    EarlyTrain->>EarlyTrain: finish_run()
+    deactivate EarlyTrain
