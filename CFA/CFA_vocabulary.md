@@ -5,7 +5,7 @@ classoption: "UTF8"
 ---
 # Vocabulary
 - forgone: [adj.] given up, renounced, 放弃的
-- protfolio: [n.] a range of investments held by a person or organization, 投资组合
+- portfolio: [n.] a range of investments held by a person or organization, 投资组合
 - dividend: [n.] a sum of money paid regularly (typically quarterly) by a company to its shareholders out of its profits (or reserves), 股息
 - cost averaging: [n.] The periodic investment of a fixed amount of money, 定额定投
 - horizon: [n.] the range of interest or activity that can be anticipated, 范围
