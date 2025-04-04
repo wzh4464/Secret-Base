@@ -27,6 +27,7 @@ classoption: "UTF8"
 - `git config --global commit.gpgsign true`
 - example: git commit -S -m "commit message"
 - `-s` means `--signoff` and `-S` means `--gpg-sign`
+- `git config --global gpg.program $(which gpg)`
 
 ## export gpg private key
 

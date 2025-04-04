@@ -11,7 +11,7 @@ classoption: "UTF8"
 - input passphrase in `~/.___`
 - `echo -n "#\!/usr/bin/bash  \ngpg --pinentry-mode loopback --batch --yes --passphrase-fd 1 --passphrase-file ~/.___$@" >> ~/.gpg-pinentry-loopback`
 - `chmod +x ~/.gpg-pinentry-loopback`
-- `git config --global gpg.program$HOME/.gpg-pinentry-loopback`
+- `git config --global gpg.program $HOME/.gpg-pinentry-loopback`
 - success in vscode
 
 ## Time Cache
